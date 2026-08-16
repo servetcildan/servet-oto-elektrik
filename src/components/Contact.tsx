@@ -1,35 +1,47 @@
 import { siteConfig } from "@/lib/site-data";
-import { IconMail, IconMapPin, IconPhone, IconWhatsApp } from "./Icons";
+import { IconClock, IconMail, IconMapPin, IconPhone, IconWhatsApp } from "./Icons";
 
 export default function Contact() {
   return (
-    <section id="iletisim" className="relative border-t border-border bg-surface py-24 sm:py-32">
+    <section id="iletisim" className="relative border-t border-border bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold tracking-widest text-accent uppercase">
-            İletişim
-          </span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <span className="section-label">İletişim</span>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
             Bize Ulaşın
           </h2>
-          <p className="mt-4 text-base text-muted">
+          <p className="mt-4 text-sm text-muted sm:text-base">
             Arıza tespiti, onarım veya yedek parça için hemen iletişime geçin.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          <div className="space-y-6">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface-elevated p-6 text-center transition-all hover:border-accent/30"
-              >
-                <div className="rounded-xl bg-accent/10 p-3 text-accent">
-                  <IconPhone className="w-6 h-6" />
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="space-y-4">
+            <div className="rounded-2xl border border-border bg-surface-elevated p-5 sm:p-6">
+              <p className="text-lg font-bold text-foreground">{siteConfig.brand}</p>
+              <p className="mt-1 text-sm text-accent">&ldquo;{siteConfig.slogan}&rdquo;</p>
+              <div className="mt-4 flex items-start gap-3">
+                <div className="shrink-0 rounded-xl bg-accent/10 p-2.5 text-accent">
+                  <IconMapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted">Telefon</p>
-                  <p className="mt-1 font-semibold text-foreground">{siteConfig.phoneDisplay}</p>
+                  <p className="text-xs font-medium text-muted uppercase tracking-wide">Konum</p>
+                  <p className="mt-0.5 font-medium text-foreground">{siteConfig.address}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="card-premium flex flex-col items-center gap-3 rounded-2xl p-5 text-center"
+              >
+                <div className="rounded-xl bg-accent/10 p-3 text-accent">
+                  <IconPhone className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted">Telefon</p>
+                  <p className="mt-1 text-sm font-semibold text-foreground">{siteConfig.phoneDisplay}</p>
                 </div>
               </a>
 
@@ -37,43 +49,46 @@ export default function Contact() {
                 href={`https://wa.me/${siteConfig.whatsapp}?text=Merhaba,%20bilgi%20almak%20istiyorum.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface-elevated p-6 text-center transition-all hover:border-[#25D366]/50"
+                className="card-premium flex flex-col items-center gap-3 rounded-2xl p-5 text-center"
               >
                 <div className="rounded-xl bg-[#25D366]/10 p-3 text-[#25D366]">
-                  <IconWhatsApp className="w-6 h-6" />
+                  <IconWhatsApp className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted">WhatsApp</p>
-                  <p className="mt-1 font-semibold text-foreground">Mesaj Gönder</p>
+                  <p className="text-xs text-muted">WhatsApp</p>
+                  <p className="mt-1 text-sm font-semibold text-foreground">Mesaj Gönder</p>
                 </div>
               </a>
             </div>
 
-            <div className="rounded-2xl border border-border bg-surface-elevated p-6">
-              <div className="flex gap-4">
-                <div className="shrink-0 rounded-xl bg-accent/10 p-3 text-accent">
-                  <IconMapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted">Konum</p>
-                  <p className="mt-1 font-semibold text-foreground">{siteConfig.address}</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-surface-elevated p-5">
+                <div className="flex gap-3">
+                  <div className="shrink-0 rounded-xl bg-accent/10 p-2.5 text-accent">
+                    <IconClock className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium text-muted uppercase tracking-wide">Çalışma Saatleri</p>
+                    <p className="mt-1 text-sm font-medium text-foreground">{siteConfig.workingHours}</p>
+                    <p className="mt-0.5 text-xs text-muted">{siteConfig.workingHoursNote}</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="rounded-2xl border border-border bg-surface-elevated p-6">
-              <div className="flex gap-4">
-                <div className="shrink-0 rounded-xl bg-accent/10 p-3 text-accent">
-                  <IconMail className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted">E-posta</p>
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="mt-1 block font-semibold text-foreground hover:text-accent"
-                  >
-                    {siteConfig.email}
-                  </a>
+              <div className="rounded-2xl border border-border bg-surface-elevated p-5">
+                <div className="flex gap-3">
+                  <div className="shrink-0 rounded-xl bg-accent/10 p-2.5 text-accent">
+                    <IconMail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium text-muted uppercase tracking-wide">E-posta</p>
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="mt-1 block text-sm font-medium text-foreground transition-colors hover:text-accent"
+                    >
+                      {siteConfig.email}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -85,11 +100,11 @@ export default function Contact() {
               src={siteConfig.mapEmbedUrl}
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "400px" }}
+              style={{ border: 0, minHeight: "360px" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="h-full min-h-[400px] w-full grayscale-[30%] contrast-[1.1]"
+              className="h-full min-h-[360px] w-full grayscale-[25%] contrast-[1.05] sm:min-h-[420px]"
             />
           </div>
         </div>

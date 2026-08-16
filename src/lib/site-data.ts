@@ -1,14 +1,16 @@
 export const siteConfig = {
   brand: "SERVET OTO ELEKTRİK-ELEKTRONİK",
-  brandShort: "SERVET OTO ELEKTRİK-ELEKTRONİK",
+  brandShort: "SERVET",
+  brandSub: "OTO ELEKTRİK-ELEKTRONİK",
   slogan: "Arızayı Okuyor, Çözümü Kodluyoruz",
-  heroSubtitle: "Oto Elektrik • Oto Elektronik • ECU • Beyin • Yazılım",
   location: "Osmancık / Çorum",
   phone: "+905321234567",
   phoneDisplay: "0532 123 45 67",
   whatsapp: "905321234567",
   email: "info@servetotoelectrik.com",
   address: "Osmancık / Çorum",
+  workingHours: "Pazartesi – Cumartesi: 08:30 – 19:00",
+  workingHoursNote: "Pazar: Kapalı",
   mapEmbedUrl:
     "https://maps.google.com/maps?q=Osmanc%C4%B1k%2C+%C3%87orum&t=&z=14&ie=UTF8&iwloc=&output=embed",
 } as const;
@@ -21,6 +23,17 @@ export const navItems = [
   { label: "Beyinler", href: "#beyinler" },
   { label: "ECU Yazılım", href: "#ecu-yazilim" },
   { label: "İletişim", href: "#iletisim" },
+] as const;
+
+export const heroTags = [
+  "Oto Elektrik",
+  "Oto Elektronik",
+  "ECU / Motor Beyni",
+  "ABS Beyni",
+  "DPF / EGR / AdBlue",
+  "İmmobilizer",
+  "ECU Yazılım",
+  "Şanzıman Adaptasyon",
 ] as const;
 
 export const services = [
@@ -37,6 +50,12 @@ export const services = [
     icon: "chip",
   },
   {
+    title: "Bilgisayarlı Arıza Tespiti",
+    description:
+      "OBD ve profesyonel teşhis cihazlarıyla hızlı, doğru ve detaylı arıza analizi.",
+    icon: "scan",
+  },
+  {
     title: "ECU / Motor Beyni",
     description:
       "Motor kontrol ünitelerinde arıza analizi, onarım, programlama ve test işlemleri.",
@@ -49,21 +68,21 @@ export const services = [
     icon: "shield",
   },
   {
-    title: "DPF / EGR / AdBlue",
-    description:
-      "Emisyon sistemleri, partikül filtresi, EGR ve AdBlue yazılım/onarım çözümleri.",
-    icon: "filter",
-  },
-  {
     title: "İmmobilizer",
     description:
       "Anahtar kodlama, immobilizer eşleştirme ve güvenlik sistemi çözümleri.",
     icon: "key",
   },
   {
+    title: "DPF / EGR / AdBlue",
+    description:
+      "Emisyon sistemleri, partikül filtresi, EGR ve AdBlue yazılım/onarım çözümleri.",
+    icon: "filter",
+  },
+  {
     title: "ECU Yazılım",
     description:
-      "Stage kalibrasyon, emisyon yazılımı, performans optimizasyonu ve özel tuning.",
+      "ECU okuma/yazma, kalibrasyon ve emisyon sistemlerine yönelik yazılım hizmetleri.",
     icon: "code",
   },
   {
@@ -74,107 +93,111 @@ export const services = [
   },
 ] as const;
 
+export const sparePartCategories = [
+  {
+    name: "Akü",
+    description: "Araç aküleri ve şarj sistemleri için uygun parça seçenekleri.",
+    icon: "battery",
+  },
+  {
+    name: "Sensörler",
+    description: "MAP, MAF, lambda, ABS hız ve basınç sensörleri.",
+    icon: "chip",
+  },
+  {
+    name: "Elektrik-Elektronik Parçalar",
+    description: "Röle, sigorta, modül ve genel elektrik-elektronik bileşenler.",
+    icon: "zap",
+  },
+  {
+    name: "Şarj ve Marş Sistemi Parçaları",
+    description: "Alternatör, marş motoru ve şarj devresi parçaları.",
+    icon: "gear",
+  },
+  {
+    name: "ECU / Elektronik Modüller",
+    description: "Motor, şanzıman ve gövde kontrol üniteleri.",
+    icon: "cpu",
+  },
+  {
+    name: "Kablo ve Bağlantı Ekipmanları",
+    description: "Tesisat, soket, konnektör ve bağlantı parçaları.",
+    icon: "box",
+  },
+] as const;
+
 export const brainUnits = [
   {
     name: "Motor ECU",
     description: "Benzin ve dizel motor kontrol üniteleri — arıza tespiti ve onarım.",
     code: "ECU-001",
-    gradient: "from-blue-600/20 to-cyan-500/10",
   },
   {
-    name: "ABS / ESP Modülü",
-    description: "Fren ve stabilite kontrol beyinleri — güvenlik odaklı onarım.",
+    name: "ABS Beyni",
+    description: "Fren ve stabilite kontrol modülleri — güvenlik odaklı teşhis ve onarım.",
     code: "ABS-002",
-    gradient: "from-blue-500/20 to-indigo-500/10",
   },
   {
-    name: "Airbag Modülü",
-    description: "Güvenlik sistemi kontrol üniteleri — SRS modül onarımı.",
+    name: "Airbag Beyni",
+    description: "SRS güvenlik sistemi kontrol üniteleri — modül analizi ve onarım.",
     code: "SRS-003",
-    gradient: "from-sky-500/20 to-blue-600/10",
   },
   {
-    name: "Şanzıman TCU",
-    description: "Otomatik şanzıman kontrol modülleri — adaptasyon ve yazılım.",
+    name: "Şanzıman Beyni",
+    description: "Otomatik şanzıman kontrol modülleri — adaptasyon ve yazılım desteği.",
     code: "TCU-004",
-    gradient: "from-cyan-500/20 to-blue-500/10",
   },
   {
-    name: "Body Control Module",
-    description: "Kapı, cam, aydınlatma ve konfor kontrol üniteleri.",
+    name: "BCM / BSI",
+    description: "Gövde kontrol, kapı, aydınlatma ve erişim güvenlik modülleri.",
     code: "BCM-005",
-    gradient: "from-indigo-500/20 to-blue-600/10",
   },
   {
-    name: "İmmobilizer / BSI",
-    description: "Anahtar, güvenlik ve erişim kontrol modülleri.",
-    code: "BSI-006",
-    gradient: "from-blue-600/20 to-sky-500/10",
+    name: "Elektronik Kontrol Modülleri",
+    description: "Klima, park sensörü, direksiyon ve diğer yardımcı kontrol üniteleri.",
+    code: "ECM-006",
   },
 ] as const;
 
 export const ecuSoftwareServices = [
   {
     title: "Stage 1",
-    description: "Fabrika güvenliği korunarak performans ve tork artışı.",
-    badge: "Performans",
+    description: "Fabrika güvenlik sınırları gözetilerek yapılan temel performans kalibrasyonu.",
+    badge: "Kalibrasyon",
   },
   {
     title: "Stage 2",
-    description: "Donanım destekli ileri seviye güç ve tork optimizasyonu.",
-    badge: "Premium",
+    description: "Donanım uyumluluğu kontrol edilerek uygulanan ileri seviye kalibrasyon.",
+    badge: "İleri Seviye",
   },
   {
-    title: "DPF Yazılım",
-    description: "Partikül filtresi sorunlarına yazılım tabanlı çözümler.",
+    title: "DPF Çözümleri",
+    description: "Partikül filtresi kaynaklı arıza ve performans sorunlarına yazılım desteği.",
     badge: "Emisyon",
   },
   {
-    title: "EGR Yazılım",
-    description: "EGR kaynaklı arıza ve performans kayıplarına kalıcı çözüm.",
+    title: "EGR Çözümleri",
+    description: "EGR sisteminden kaynaklanan arıza ve verim kayıplarına yönelik çözümler.",
     badge: "Emisyon",
   },
   {
-    title: "AdBlue Yazılım",
-    description: "AdBlue/SCR sistem arızalarında profesyonel yazılım desteği.",
+    title: "AdBlue Çözümleri",
+    description: "SCR/AdBlue sistem arızalarında profesyonel yazılım ve teşhis desteği.",
     badge: "Emisyon",
   },
   {
-    title: "Performans Yazılımı",
-    description: "Yakıt ekonomisi, tork eğrisi ve sürüş karakteristiği optimizasyonu.",
-    badge: "Tuning",
-  },
-] as const;
-
-export const sparePartProducts = [
-  {
-    name: "ECU Modülleri",
-    description: "Motor, şanzıman ve gövde kontrol üniteleri.",
-    category: "Beyin",
+    title: "ECU Okuma / Yazma",
+    description: "Orijinal yazılım yedekleme, okuma ve güvenli yazılım uygulama hizmetleri.",
+    badge: "Temel",
   },
   {
-    name: "Sensörler",
-    description: "MAP, MAF, lambda, ABS hız ve basınç sensörleri.",
-    category: "Elektronik",
+    title: "İmmobilizer Çözümleri",
+    description: "Anahtar eşleştirme ve güvenlik sistemi yazılım işlemleri.",
+    badge: "Güvenlik",
   },
   {
-    name: "Aktüatörler",
-    description: "EGR, turbo, enjektör ve valf kontrol üniteleri.",
-    category: "Elektronik",
-  },
-  {
-    name: "Kablo & Konnektör",
-    description: "Tesisat, soket ve bağlantı parçaları.",
-    category: "Elektrik",
-  },
-  {
-    name: "Alternatör & Marş",
-    description: "Şarj ve çalıştırma sistemleri.",
-    category: "Elektrik",
-  },
-  {
-    name: "Emisyon Parçaları",
-    description: "DPF, EGR, AdBlue ve ilgili bileşenler.",
-    category: "Emisyon",
+    title: "Şanzıman Adaptasyonları",
+    description: "TCU öğrenme, adaptasyon ve şanzıman kontrol yazılım işlemleri.",
+    badge: "Şanzıman",
   },
 ] as const;

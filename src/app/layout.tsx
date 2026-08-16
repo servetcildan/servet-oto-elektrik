@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Servet Oto Elektrik-Elektronik | Osmancık / Çorum",
+  title: "Servet Oto Elektrik-Elektronik | Osmancık Oto Elektrik",
   description:
-    "Arızayı Okuyor, Çözümü Kodluyoruz. Oto elektrik, ECU onarım, ABS beyin, DPF/EGR/AdBlue, immobilizer ve ECU yazılım hizmetleri.",
+    "Osmancık oto elektrik ve elektronik servisi. ECU, motor beyni, ABS beyni, DPF, EGR, AdBlue, immobilizer, arıza tespiti ve ECU yazılım hizmetleri.",
   keywords: [
     "oto elektrik",
     "ECU onarım",

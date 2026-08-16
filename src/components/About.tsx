@@ -1,58 +1,55 @@
 import { siteConfig } from "@/lib/site-data";
-import { IconCpu, IconShield, IconZap } from "./Icons";
+import { IconCpu, IconShield, IconScan } from "./Icons";
 
 const highlights = [
   {
-    icon: IconCpu,
-    title: "Gelişmiş Teşhis",
+    icon: IconScan,
+    title: "Modern Teşhis Ekipmanları",
     description: "Profesyonel cihazlarla hızlı ve doğru arıza tespiti",
   },
   {
-    icon: IconShield,
-    title: "Güvenilir Onarım",
-    description: "ECU ve elektronik modül onarımında uzman kadro",
+    icon: IconCpu,
+    title: "ECU & Beyin Uzmanlığı",
+    description: "Motor, ABS ve elektronik modül onarımında deneyimli kadro",
   },
   {
-    icon: IconZap,
-    title: "Hızlı Çözüm",
-    description: "Minimum bekleme süresi, maksimum verimlilik",
+    icon: IconShield,
+    title: "Güvenilir Hizmet",
+    description: "Teşhisten onarıma kadar şeffaf ve kalıcı çözümler",
   },
 ];
 
 export default function About() {
   return (
-    <section id="hakkimizda" className="relative border-y border-border bg-surface py-24 sm:py-32">
+    <section id="hakkimizda" className="relative border-y border-border bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <span className="text-sm font-semibold tracking-widest text-accent uppercase">
-              Hakkımızda
-            </span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Arızayı Okuyor, Çözümü Kodluyoruz
+            <span className="section-label">Hakkımızda</span>
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
+              Teknoloji ve Tecrübe Bir Arada
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted sm:text-lg">
-              <strong className="text-foreground">{siteConfig.brand}</strong> olarak{" "}
-              {siteConfig.location} bölgesinde oto elektrik ve elektronik alanında
-              profesyonel hizmet sunuyoruz. Motor beyni, ABS modülü, immobilizer ve
-              emisyon sistemlerinde uzmanlaşmış ekibimizle aracınızın elektronik
-              altyapısına güvenilir çözümler üretiyoruz.
+            <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base lg:text-lg">
+              <strong className="font-semibold text-foreground">{siteConfig.brand}</strong>,{" "}
+              {siteConfig.location} bölgesinde oto elektrik-elektronik alanında profesyonel
+              servis hizmeti sunmaktadır. Modern arıza teşhis ekipmanlarımız ve uzman
+              ekibimizle ECU, motor beyni, ABS modülü ve immobilizer sistemlerinde güvenilir
+              çözümler üretiyoruz.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Teşhisten onarıma, yazılımdan yedek parça teminine kadar tüm süreçleri
-              tek çatı altında yönetiyor; her aracı titizlikle analiz ederek kalıcı
-              çözümler sunuyoruz.
+            <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+              Teşhisten onarıma, yazılımdan yedek parça teminine kadar tüm süreçleri tek
+              çatı altında yöneterek her araca titizlikle yaklaşıyoruz.
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-1">
+          <div className="grid gap-3 sm:gap-4">
             {highlights.map((item) => (
               <div
                 key={item.title}
-                className="flex gap-4 rounded-2xl border border-border bg-surface-elevated p-6"
+                className="card-premium flex gap-4 rounded-2xl p-5 sm:p-6"
               >
                 <div className="shrink-0 rounded-xl bg-accent/10 p-3 text-accent">
-                  <item.icon className="w-6 h-6" />
+                  <item.icon className="h-6 w-6" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">{item.title}</h3>
