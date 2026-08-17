@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ResolvedMedia } from "@/lib/media-server";
-import MediaPlaceholder from "./MediaPlaceholder";
-import { IconClose, IconPlay } from "./Icons";
+import { IconClose } from "./Icons";
+import WorkCardPreview from "./WorkCardPreview";
 
 type WorkGalleryProps = {
   items: ResolvedMedia[];
@@ -87,41 +86,13 @@ export default function WorkGallery({ items }: WorkGalleryProps) {
 
           const media = (
             <>
-              {item.posterSrc ? (
-                <Image
-                  src={item.posterSrc}
-                  alt={item.title}
-                  fill
-                  sizes={featured ? "(max-width: 640px) 92vw, 62vw" : "(max-width: 640px) 92vw, 31vw"}
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                />
-              ) : (
-                <MediaPlaceholder subtle={!featured} />
-              )}
+              <WorkCardPreview item={item} featured={featured} suspended={Boolean(active)} />
 
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"
-                aria-hidden="true"
-              />
-
-              {playable ? (
-                <span
-                  className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/45 text-white backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-on sm:h-16 sm:w-16"
-                  aria-hidden="true"
-                >
-                  <IconPlay className="ml-0.5 h-6 w-6" />
-                </span>
-              ) : (
-                <span className="absolute right-3 top-3 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-white/70 backdrop-blur-sm">
-                  Yakında
-                </span>
-              )}
-
-              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] p-4 sm:p-5">
                 <h3 className="text-sm font-semibold leading-snug text-white sm:text-base">
                   {item.title}
                 </h3>
-                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/65 sm:text-sm">
+                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/70 sm:text-sm">
                   {item.description}
                 </p>
               </div>
@@ -129,7 +100,7 @@ export default function WorkGallery({ items }: WorkGalleryProps) {
           );
 
           // Öne çıkan kart satır yüksekliğini belirler; diğerleri o satıra uzar.
-          const frameClass = `media-frame group relative w-full overflow-hidden rounded-2xl ${
+          const frameClass = `group relative w-full overflow-hidden rounded-2xl border border-border-strong bg-black ${
             featured ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3] lg:aspect-auto lg:min-h-64"
           }`;
           const spanClass = featured ? "sm:col-span-2" : "";
@@ -148,7 +119,7 @@ export default function WorkGallery({ items }: WorkGalleryProps) {
               type="button"
               onClick={(event) => open(event, item.id)}
               aria-label={`${item.title} videosunu oynat`}
-              className={`${frameClass} ${spanClass} cursor-pointer text-left transition-colors hover:border-accent/60`}
+              className={`${frameClass} ${spanClass} cursor-pointer text-left transition-colors hover:border-accent/50`}
             >
               {media}
             </button>

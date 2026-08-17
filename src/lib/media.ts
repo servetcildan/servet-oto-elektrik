@@ -4,7 +4,7 @@ export type WorkMedia = {
   description: string;
   /** public/videos altındaki dosya adı */
   file: string;
-  /** public/videos/posters altındaki dosya adı */
+  /** Kapak JPEG adı; önce /videos, yoksa /videos/posters içinde aranır */
   poster: string;
 };
 

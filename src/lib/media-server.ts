@@ -17,19 +17,33 @@ function existsInPublic(publicPath: string): boolean {
   }
 }
 
+function resolvePosterSrc(filename: string): string | null {
+  const besideVideo = `${VIDEO_DIR}/${filename}`;
+  const inPostersDir = `${POSTER_DIR}/${filename}`;
+
+  if (existsInPublic(besideVideo)) {
+    return besideVideo;
+  }
+
+  if (existsInPublic(inPostersDir)) {
+    return inPostersDir;
+  }
+
+  return null;
+}
+
 /**
- * Medya dosyalarının varlığı derleme sırasında kontrol edilir; eksik dosyalar
- * için oynatıcı yerine premium bir yer tutucu gösterilir, kırık öğe oluşmaz.
+ * Medya dosyalarının varlığı derleme sırasında kontrol edilir. Poster JPEG'ler
+ * videonun yanında (`/videos`) veya `videos/posters` içinde aranır.
  */
 export function getResolvedMedia(): ResolvedMedia[] {
   return workMedia.map((item) => {
     const videoPath = `${VIDEO_DIR}/${item.file}`;
-    const posterPath = `${POSTER_DIR}/${item.poster}`;
 
     return {
       ...item,
       videoSrc: existsInPublic(videoPath) ? videoPath : null,
-      posterSrc: existsInPublic(posterPath) ? posterPath : null,
+      posterSrc: resolvePosterSrc(item.poster),
     };
   });
 }
