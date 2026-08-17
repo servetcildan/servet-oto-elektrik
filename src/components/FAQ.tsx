@@ -12,8 +12,8 @@ export default function FAQ() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="section-label">SSS</span>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Sık Sorulan Sorular
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
+            <span className="text-metal">Sık Sorulan Sorular</span>
           </h2>
           <p className="mt-3 text-sm text-muted sm:text-base">
             Oto elektrik ve elektronik konularında merak edilen sorular.
@@ -38,7 +38,7 @@ export default function FAQ() {
                     {item.question}
                   </span>
                   <IconChevronRight
-                    className={`h-5 w-5 shrink-0 text-accent transition-transform ${isOpen ? "rotate-90" : ""}`}
+                    className={`h-5 w-5 shrink-0 text-accent-text transition-transform ${isOpen ? "rotate-90" : ""}`}
                   />
                 </button>
                 {isOpen && (

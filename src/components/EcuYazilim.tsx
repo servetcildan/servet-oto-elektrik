@@ -1,5 +1,5 @@
 import { ecuSoftwareServices } from "@/lib/site-data";
-import { IconChevronRight, IconCode } from "./Icons";
+import { IconChevronRight } from "./Icons";
 
 export default function EcuYazilim() {
   return (
@@ -7,13 +7,12 @@ export default function EcuYazilim() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="section-label">ECU Yazılım</span>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-            Profesyonel ECU Yazılım Hizmetleri
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+            <span className="text-metal">Profesyonel ECU Yazılım Hizmetleri</span>
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base lg:text-lg">
-            ECU yazılım işlemlerinde aracınıza ve sisteminize uygun, güvenilir ve
-            kurumsal çözümler sunuyoruz. Orijinal yazılım yedekleme her işlem öncesinde
-            gerçekleştirilir.
+          <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+            Her işlem öncesinde orijinal yazılım yedeklenir; aracınıza uygun, güvenli
+            ve kurumsal çözümler uygulanır.
           </p>
         </div>
 
@@ -23,7 +22,7 @@ export default function EcuYazilim() {
               key={service.title}
               className="card-premium group relative flex flex-col rounded-2xl p-5 sm:p-6"
             >
-              <span className="mb-3 inline-flex w-fit rounded-full border border-accent/20 bg-accent/10 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-accent uppercase sm:text-xs">
+              <span className="mb-3 inline-flex w-fit rounded-full border border-border bg-surface px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent-text sm:text-[11px]">
                 {service.badge}
               </span>
               <h3 className="text-base font-semibold text-foreground sm:text-lg">{service.title}</h3>
@@ -32,42 +31,24 @@ export default function EcuYazilim() {
           ))}
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-surface">
-          <div className="grid lg:grid-cols-[1fr_auto]">
-            <div className="relative p-6 sm:p-8 lg:p-10">
-              <div className="absolute inset-0 grid-pattern opacity-20" />
-              <div className="relative">
-                <p className="text-sm leading-relaxed text-muted sm:text-base">
-                  Yazılım işlemleri öncesinde detaylı teşhis yapılır. Aracınızın marka,
-                  model ve mevcut yazılım durumuna göre en uygun çözüm önerilir.
-                  Emisyon sistemleri ve güvenlik modülleri konusunda dikkatli ve
-                  sorumlu bir yaklaşım benimsenir.
-                </p>
-                <a
-                  href="#iletisim"
-                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-accent-dim"
-                >
-                  Yazılım Danışmanlığı
-                  <IconChevronRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center justify-center border-t border-border bg-surface-elevated p-8 lg:border-t-0 lg:border-l lg:p-10">
-              <div className="text-center">
-                <div className="mx-auto mb-4 inline-flex rounded-2xl border border-accent/20 bg-accent/10 p-5 text-accent">
-                  <IconCode className="h-10 w-10 sm:h-12 sm:w-12" />
-                </div>
-                <p className="font-mono text-xs text-muted sm:text-sm">
-                  <span className="text-accent">&gt;</span> read_ecu()
-                </p>
-                <p className="font-mono text-xs text-muted sm:text-sm">
-                  <span className="text-accent">&gt;</span> backup_original()
-                </p>
-                <p className="font-mono text-xs text-accent sm:text-sm">
-                  <span className="text-muted">&gt;</span> apply_calibration() ✓
-                </p>
-              </div>
-            </div>
+        <div className="media-frame relative mt-10 overflow-hidden rounded-2xl px-6 py-8 sm:px-10 sm:py-10">
+          <div
+            className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-accent/10 blur-3xl"
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+              Yazılım işlemleri öncesinde detaylı teşhis yapılır. Aracınızın marka, model ve
+              mevcut yazılım durumuna göre en uygun çözüm önerilir; emisyon ve güvenlik
+              sistemlerinde sorumlu bir yaklaşım benimsenir.
+            </p>
+            <a
+              href="#iletisim"
+              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-accent-on transition-colors hover:bg-accent-hover"
+            >
+              Yazılım Danışmanlığı
+              <IconChevronRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>

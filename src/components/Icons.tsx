@@ -155,6 +155,67 @@ export function IconClock({ className = "w-6 h-6" }: IconProps) {
   );
 }
 
+export function IconDroplet({ className = "w-6 h-6" }: IconProps) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.75c3.5 4.2 6 7.35 6 10.25a6 6 0 11-12 0c0-2.9 2.5-6.05 6-10.25z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.25 13.5a2.75 2.75 0 002.75 2.75" />
+    </svg>
+  );
+}
+
+export function IconPlay({ className = "w-6 h-6" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M8.25 5.5a.75.75 0 011.144-.638l8.5 5.25a.75.75 0 010 1.276l-8.5 5.25A.75.75 0 018.25 16V5.5z" />
+    </svg>
+  );
+}
+
+export function IconChevronLeft({ className = "w-5 h-5" }: IconProps) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  );
+}
+
+export function IconStar({ className = "w-4 h-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2.25l2.955 5.988 6.608.96-4.782 4.66 1.129 6.582L12 17.34l-5.91 3.1 1.128-6.581-4.781-4.661 6.608-.96L12 2.25z" />
+    </svg>
+  );
+}
+
+export function IconStarOutline({ className = "w-4 h-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25l2.955 5.988 6.608.96-4.782 4.66 1.129 6.582L12 17.34l-5.91 3.1 1.128-6.581-4.781-4.661 6.608-.96L12 2.25z" />
+    </svg>
+  );
+}
+
+/** Google'ın çok renkli "G" işareti — kaynak atfı için kullanılır. */
+export function IconGoogle({ className = "w-5 h-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" aria-hidden="true">
+      <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+      <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7A21.99 21.99 0 0024 46z" />
+      <path fill="#FBBC05" d="M11.69 28.18A13.2 13.2 0 0111 24c0-1.45.25-2.86.69-4.18v-5.7H4.34A21.99 21.99 0 002 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z" />
+      <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+    </svg>
+  );
+}
+
+export function IconExternal({ className = "w-4 h-4" }: IconProps) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H18v4.5M17.25 6.75L10.5 13.5M18 14.25v3A2.25 2.25 0 0115.75 19.5h-9A2.25 2.25 0 014.5 17.25v-9A2.25 2.25 0 016.75 6h3" />
+    </svg>
+  );
+}
+
 const iconMap = {
   zap: IconZap,
   chip: IconChip,
@@ -167,6 +228,7 @@ const iconMap = {
   gear: IconGear,
   scan: IconScan,
   battery: IconBattery,
+  droplet: IconDroplet,
 } as const;
 export function ServiceIcon({
   name,

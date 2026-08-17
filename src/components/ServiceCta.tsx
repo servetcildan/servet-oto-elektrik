@@ -13,7 +13,7 @@ export default function ServiceCta() {
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <a
           href={`tel:${siteConfig.phone}`}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-accent-dim focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3.5 text-sm font-semibold text-accent-on transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <IconPhone className="h-5 w-5" />
           {siteConfig.phoneDisplay}

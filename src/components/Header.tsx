@@ -36,7 +36,7 @@ export default function Header() {
           className="group flex min-w-0 flex-col"
           onClick={() => setMenuOpen(false)}
         >
-          <span className="text-lg font-bold tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-xl">
+          <span className="text-lg font-bold tracking-wide text-foreground transition-colors group-hover:text-accent-text sm:text-xl">
             {siteConfig.brandShort}
           </span>
           <span className="truncate text-[10px] font-medium tracking-[0.12em] text-muted uppercase sm:text-xs">
@@ -59,7 +59,7 @@ export default function Header() {
         <div className="flex items-center justify-end gap-2 sm:gap-3">
           <a
             href={`tel:${siteConfig.phone}`}
-            className="hidden items-center gap-2 rounded-lg bg-accent px-3.5 py-2 text-sm font-semibold text-background transition-colors hover:bg-accent-dim sm:flex lg:px-4 lg:py-2.5"
+            className="hidden items-center gap-2 rounded-lg bg-accent px-3.5 py-2 text-sm font-semibold text-accent-on transition-colors hover:bg-accent-hover sm:flex lg:px-4 lg:py-2.5"
           >
             <IconPhone className="h-4 w-4 shrink-0" />
             <span className="hidden lg:inline">{siteConfig.phoneDisplay}</span>
@@ -99,7 +99,7 @@ export default function Header() {
               ))}
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3.5 text-base font-semibold text-background"
+                className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3.5 text-base font-semibold text-accent-on"
               >
                 <IconPhone className="h-5 w-5" />
                 {siteConfig.phoneDisplay}

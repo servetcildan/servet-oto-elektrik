@@ -28,10 +28,11 @@ export const siteConfig = {
 export const navItems = [
   { label: "Ana Sayfa", href: "/#ana-sayfa" },
   { label: "Hizmetler", href: "/#hizmetler" },
+  { label: "Çalışmalarımız", href: "/#calismalar" },
   { label: "Hakkımızda", href: "/#hakkimizda" },
-  { label: "Yedek Parça", href: "/#yedek-parca" },
   { label: "Beyinler", href: "/#beyinler" },
   { label: "ECU Yazılım", href: "/#ecu-yazilim" },
+  { label: "Yedek Parça", href: "/#yedek-parca" },
   { label: "İletişim", href: "/#iletisim" },
 ] as const;
 
@@ -46,108 +47,89 @@ export const servicePageLinks = [
   { label: "ECU Yazılım", href: "/ecu-yazilim" },
 ] as const;
 
-export const heroTags = [
-  "Oto Elektrik",
-  "Oto Elektronik",
-  "ECU / Motor Beyni",
-  "ABS Beyni",
-  "DPF / EGR / AdBlue",
-  "İmmobilizer",
-  "ECU Yazılım",
-  "Şanzıman Adaptasyon",
+export const heroTrustItems = [
+  { label: "7/24 Açık", icon: "clock" },
+  { label: "Osmancık / Çorum", icon: "pin" },
+  { label: "Uzman Arıza Teşhisi", icon: "scan" },
+] as const satisfies readonly { label: string; icon: "clock" | "pin" | "scan" }[];
+
+export const trustPoints = [
+  {
+    title: "Gerçek Atölye Çalışmaları",
+    description: "Sitedeki görüntüler kendi tezgâhımızda yapılan işlemlere aittir.",
+    icon: "scan",
+  },
+  {
+    title: "Uzman Elektronik Onarım",
+    description: "ECU, ABS ve gövde modüllerinde kart seviyesinde onarım deneyimi.",
+    icon: "cpu",
+  },
+  {
+    title: "Modern Teşhis ve Yazılım",
+    description: "Güncel teşhis cihazları ve orijinal yazılım yedekleme altyapısı.",
+    icon: "chip",
+  },
+  {
+    title: "Şeffaf İşlem Süreci",
+    description: "Teşhis sonucu, yapılacak işlem ve süre önceden net şekilde paylaşılır.",
+    icon: "shield",
+  },
 ] as const;
 
 export const services = [
   {
-    title: "Oto Elektrik",
-    description:
-      "Alternatör, marş, akü, kablo tesisatı ve elektrik arızalarında profesyonel teşhis ve onarım.",
-    icon: "zap",
-    href: "/osmancik-oto-elektrik",
-  },
-  {
-    title: "Oto Elektronik",
-    description:
-      "Sensör, aktüatör, kontrol modülleri ve elektronik sistem arızalarında uzman çözüm.",
-    icon: "chip",
-    href: "/osmancik-oto-elektrik",
-  },
-  {
     title: "Bilgisayarlı Arıza Tespiti",
-    description:
-      "OBD ve profesyonel teşhis cihazlarıyla hızlı, doğru ve detaylı arıza analizi.",
+    description: "Profesyonel teşhis cihazlarıyla hızlı ve doğru sistem analizi.",
     icon: "scan",
     href: "/ariza-tespit",
   },
   {
     title: "ECU / Motor Beyni",
-    description:
-      "Motor kontrol ünitelerinde arıza analizi, onarım, programlama ve test işlemleri.",
+    description: "Motor kontrol ünitesinde arıza analizi, onarım ve programlama.",
     icon: "cpu",
     href: "/ecu-motor-beyni",
   },
   {
     title: "ABS Beyni",
-    description:
-      "ABS/ESP modül arızalarında profesyonel teşhis, onarım ve güvenlik testleri.",
+    description: "ABS ve ESP modüllerinde güvenlik odaklı teşhis ve onarım.",
     icon: "shield",
     href: "/abs-beyni",
   },
   {
-    title: "Şarj Dinamosu",
-    description:
-      "Alternatör arızalarında şarj devresi testi, onarım ve değişim hizmetleri.",
-    icon: "gear",
-    href: "/osmancik-oto-elektrik",
-  },
-  {
-    title: "Marş Dinamosu",
-    description:
-      "Marş motoru arızalarında teşhis, onarım ve sistemin birlikte kontrol edilmesi.",
-    icon: "gear",
-    href: "/osmancik-oto-elektrik",
-  },
-  {
-    title: "Akü Kontrol ve Değişimi",
-    description:
-      "Akü sağlık testi, değişim ve şarj sistemi kaynaklı deşarj sorunlarının analizi.",
-    icon: "battery",
-    href: "/aku",
-  },
-  {
-    title: "DPF / Partikül Arızaları",
-    description:
-      "Partikül filtresi tıkanması ve emisyon sistemlerinde teşhis ve onarım desteği.",
+    title: "EGR – DPF Arıza Çözümleri",
+    description: "Partikül filtresi ve EGR devresi arızalarında teşhis ve onarım.",
     icon: "filter",
     href: "/dpf-egr",
   },
   {
-    title: "EGR Arızaları",
-    description:
-      "EGR valfi ve emisyon devresi arızalarında profesyonel teşhis ve çözüm.",
-    icon: "filter",
+    title: "AdBlue / NOx Sistem Çözümleri",
+    description: "SCR, AdBlue ve NOx sensörü arızalarında profesyonel teşhis desteği.",
+    icon: "droplet",
     href: "/dpf-egr",
   },
   {
-    title: "Immobilizer",
-    description:
-      "Anahtar kodlama, immobilizer eşleştirme ve güvenlik sistemi çözümleri.",
+    title: "İmmobilizer",
+    description: "Anahtar kodlama, transponder eşleştirme ve güvenlik modülü çözümleri.",
     icon: "key",
     href: "/immobilizer",
   },
   {
-    title: "ECU Yazılım",
-    description:
-      "ECU okuma/yazma, kalibrasyon ve emisyon sistemlerine yönelik yazılım hizmetleri.",
-    icon: "code",
+    title: "Şanzıman Adaptasyonu ve DSG Optimizasyonu",
+    description: "Otomatik ve çift kavramalı şanzımanlarda adaptasyon ve kalibrasyon.",
+    icon: "gear",
     href: "/ecu-yazilim",
   },
   {
-    title: "Şanzıman Adaptasyonları",
-    description:
-      "Otomatik şanzıman öğrenme, adaptasyon ve TCU yazılım/kalibrasyon hizmetleri.",
-    icon: "gear",
-    href: "/ecu-yazilim",
+    title: "Marş ve Şarj Dinamosu",
+    description: "Marş motoru ve alternatör arızalarında test, onarım ve değişim.",
+    icon: "zap",
+    href: "/osmancik-oto-elektrik",
+  },
+  {
+    title: "Akü Kontrolü ve Değişimi",
+    description: "Akü sağlık testi, değişim ve kaçak akım kaynaklı deşarj analizi.",
+    icon: "battery",
+    href: "/aku",
   },
 ] as const;
 

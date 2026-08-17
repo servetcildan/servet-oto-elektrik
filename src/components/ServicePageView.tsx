@@ -41,7 +41,7 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
               <ul className="mt-4 space-y-2">
                 {section.list.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted sm:text-base">
-                    <IconChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    <IconChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-accent-text" />
                     {item}
                   </li>
                 ))}
@@ -69,7 +69,7 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
           <ul className="mt-4 space-y-2">
             {page.whenToVisit.map((item) => (
               <li key={item} className="flex items-start gap-2 text-sm text-muted sm:text-base">
-                <IconChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                <IconChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-accent-text" />
                 {item}
               </li>
             ))}
@@ -81,7 +81,7 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
           <ol className="mt-4 space-y-2">
             {page.procedures.map((item, index) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted sm:text-base">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-semibold text-accent">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-semibold text-accent-text">
                   {index + 1}
                 </span>
                 {item}
@@ -100,7 +100,7 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
                   <Link
                     key={slug}
                     href={`/${slug}`}
-                    className="rounded-lg border border-border bg-surface px-4 py-2 text-sm text-muted transition-colors hover:border-accent/30 hover:text-accent"
+                    className="rounded-lg border border-border bg-surface px-4 py-2 text-sm text-muted transition-colors hover:border-accent/30 hover:text-accent-text"
                   >
                     {related.breadcrumbTitle}
                   </Link>
@@ -113,7 +113,7 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
         <ServiceCta />
 
         <p className="mt-8 text-center text-sm text-muted">
-          <Link href="/" className="transition-colors hover:text-accent">
+          <Link href="/" className="transition-colors hover:text-accent-text">
             ← Ana Sayfaya Dön
           </Link>
         </p>

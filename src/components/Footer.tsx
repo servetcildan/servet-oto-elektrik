@@ -26,7 +26,7 @@ export default function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-muted transition-colors hover:text-accent"
+                  className="text-sm text-muted transition-colors hover:text-accent-text"
                 >
                   {item.label}
                 </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-muted transition-colors hover:text-accent"
+                  className="text-sm text-muted transition-colors hover:text-accent-text"
                 >
                   {item.label}
                 </Link>
@@ -52,14 +52,14 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-foreground">İletişim</p>
             <div className="mt-3 space-y-2 text-sm text-muted">
-              <a href={`tel:${siteConfig.phone}`} className="block transition-colors hover:text-accent">
+              <a href={`tel:${siteConfig.phone}`} className="block transition-colors hover:text-accent-text">
                 {siteConfig.phoneDisplay}
               </a>
               <a
                 href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block transition-colors hover:text-accent"
+                className="block transition-colors hover:text-accent-text"
               >
                 WhatsApp
               </a>
@@ -68,7 +68,7 @@ export default function Footer() {
                 href={siteConfig.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block transition-colors hover:text-accent"
+                className="block transition-colors hover:text-accent-text"
               >
                 Yol Tarifi Al
               </a>
