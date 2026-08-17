@@ -1,5 +1,5 @@
 import { siteConfig } from "@/lib/site-data";
-import { IconClock, IconMail, IconMapPin, IconPhone, IconWhatsApp } from "./Icons";
+import { IconClock, IconMapPin, IconPhone, IconWhatsApp } from "./Icons";
 
 export default function Contact() {
   return (
@@ -18,14 +18,14 @@ export default function Contact() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="space-y-4">
             <div className="rounded-2xl border border-border bg-surface-elevated p-5 sm:p-6">
-              <p className="text-lg font-bold text-foreground">{siteConfig.brand}</p>
+              <p className="text-lg font-bold text-foreground">{siteConfig.businessName}</p>
               <p className="mt-1 text-sm text-accent">&ldquo;{siteConfig.slogan}&rdquo;</p>
               <div className="mt-4 flex items-start gap-3">
                 <div className="shrink-0 rounded-xl bg-accent/10 p-2.5 text-accent">
                   <IconMapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-muted uppercase tracking-wide">Konum</p>
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted">Adres</p>
                   <p className="mt-0.5 font-medium text-foreground">{siteConfig.address}</p>
                 </div>
               </div>
@@ -61,34 +61,30 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border bg-surface-elevated p-5">
-                <div className="flex gap-3">
-                  <div className="shrink-0 rounded-xl bg-accent/10 p-2.5 text-accent">
-                    <IconClock className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium text-muted uppercase tracking-wide">Çalışma Saatleri</p>
-                    <p className="mt-1 text-sm font-medium text-foreground">{siteConfig.workingHours}</p>
-                    <p className="mt-0.5 text-xs text-muted">{siteConfig.workingHoursNote}</p>
-                  </div>
-                </div>
+            <a
+              href={siteConfig.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-premium flex items-center justify-center gap-3 rounded-2xl p-4"
+            >
+              <div className="rounded-xl bg-accent/10 p-2.5 text-accent">
+                <IconMapPin className="h-5 w-5" />
               </div>
+              <div className="text-left">
+                <p className="text-xs text-muted">Google Maps</p>
+                <p className="text-sm font-semibold text-foreground">Yol Tarifi Al</p>
+              </div>
+            </a>
 
-              <div className="rounded-2xl border border-border bg-surface-elevated p-5">
-                <div className="flex gap-3">
-                  <div className="shrink-0 rounded-xl bg-accent/10 p-2.5 text-accent">
-                    <IconMail className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium text-muted uppercase tracking-wide">E-posta</p>
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="mt-1 block text-sm font-medium text-foreground transition-colors hover:text-accent"
-                    >
-                      {siteConfig.email}
-                    </a>
-                  </div>
+            <div className="rounded-2xl border border-border bg-surface-elevated p-5">
+              <div className="flex gap-3">
+                <div className="shrink-0 rounded-xl bg-accent/10 p-2.5 text-accent">
+                  <IconClock className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted">Çalışma Saatleri</p>
+                  <p className="mt-1 text-sm font-medium text-foreground">{siteConfig.workingHours}</p>
+                  <p className="mt-0.5 text-xs text-muted">{siteConfig.workingHoursNote}</p>
                 </div>
               </div>
             </div>

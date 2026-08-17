@@ -151,13 +151,17 @@ export default function Hero() {
               <span className="text-xs font-medium text-muted sm:text-sm">{siteConfig.location}</span>
             </div>
 
-            <h1 className="text-[1.75rem] font-bold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl xl:text-[3.25rem]">
+            <p className="text-[1.75rem] font-bold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl xl:text-[3.25rem]">
               <span className="block text-foreground">
                 SERVET <span className="hero-title-accent">OTO</span>
               </span>
               <span className="mt-0.5 block text-foreground">
                 ELEKTRİK-<span className="hero-title-accent">ELEKTRONİK</span>
               </span>
+            </p>
+
+            <h1 className="mt-4 text-xl font-semibold leading-snug text-foreground sm:text-2xl lg:text-3xl">
+              Osmancık Oto Elektrik &amp; Elektronik Servisi
             </h1>
 
             <p className="mt-5 text-base font-medium leading-snug text-accent sm:text-lg lg:text-xl">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { getSiteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,21 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: "Servet Oto Elektrik-Elektronik | Osmancık Oto Elektrik",
-  description:
-    "Osmancık oto elektrik ve elektronik servisi. ECU, motor beyni, ABS beyni, DPF, EGR, AdBlue, immobilizer, arıza tespiti ve ECU yazılım hizmetleri.",
-  keywords: [
-    "oto elektrik",
-    "ECU onarım",
-    "motor beyni",
-    "ABS beyni",
-    "DPF EGR AdBlue",
-    "immobilizer",
-    "ECU yazılım",
-    "Osmancık",
-    "Çorum",
-  ],
+  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

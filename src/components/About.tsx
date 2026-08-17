@@ -4,18 +4,18 @@ import { IconCpu, IconShield, IconScan } from "./Icons";
 const highlights = [
   {
     icon: IconScan,
-    title: "Modern Teşhis Ekipmanları",
-    description: "Profesyonel cihazlarla hızlı ve doğru arıza tespiti",
+    title: "Bilgisayarlı Arıza Tespiti",
+    description: "OBD ve profesyonel teşhis cihazlarıyla sistem analizi",
   },
   {
     icon: IconCpu,
-    title: "ECU & Beyin Uzmanlığı",
-    description: "Motor, ABS ve elektronik modül onarımında deneyimli kadro",
+    title: "ECU & Araç Beyni",
+    description: "Motor, ABS ve elektronik modül onarımında deneyimli ekip",
   },
   {
     icon: IconShield,
-    title: "Güvenilir Hizmet",
-    description: "Teşhisten onarıma kadar şeffaf ve kalıcı çözümler",
+    title: "Güvenilir Servis",
+    description: "Teşhisten onarıma şeffaf ve ölçülü yaklaşım",
   },
 ];
 
@@ -27,18 +27,16 @@ export default function About() {
           <div>
             <span className="section-label">Hakkımızda</span>
             <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-              Teknoloji ve Tecrübe Bir Arada
+              {siteConfig.location} Oto Elektrik-Elektronik Servisi
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base lg:text-lg">
               <strong className="font-semibold text-foreground">{siteConfig.brand}</strong>,{" "}
-              {siteConfig.location} bölgesinde oto elektrik-elektronik alanında profesyonel
-              servis hizmeti sunmaktadır. Modern arıza teşhis ekipmanlarımız ve uzman
-              ekibimizle ECU, motor beyni, ABS modülü ve immobilizer sistemlerinde güvenilir
-              çözümler üretiyoruz.
+              {siteConfig.location} bölgesinde oto elektrik, oto elektronik, bilgisayarlı arıza
+              tespiti, ECU / motor beyni, ABS ve araç elektronik sistemlerinde hizmet vermektedir.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
-              Teşhisten onarıma, yazılımdan yedek parça teminine kadar tüm süreçleri tek
-              çatı altında yöneterek her araca titizlikle yaklaşıyoruz.
+              Modern teşhis ekipmanlarımızla aracınızın ihtiyacını doğru analiz ediyor; teşhisten
+              onarıma, yazılımdan yedek parça teminine kadar süreçleri tek çatı altında yönetiyoruz.
             </p>
           </div>
 

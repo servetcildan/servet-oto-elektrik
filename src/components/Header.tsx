@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { navItems, siteConfig } from "@/lib/site-data";
 import { IconMenu, IconClose, IconPhone } from "./Icons";
@@ -30,8 +31,8 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <a
-          href="#ana-sayfa"
+        <Link
+          href="/"
           className="group flex min-w-0 flex-col"
           onClick={() => setMenuOpen(false)}
         >
@@ -41,7 +42,7 @@ export default function Header() {
           <span className="truncate text-[10px] font-medium tracking-[0.12em] text-muted uppercase sm:text-xs">
             {siteConfig.brandSub}
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center justify-center gap-0.5 xl:flex">
           {navItems.map((item) => (

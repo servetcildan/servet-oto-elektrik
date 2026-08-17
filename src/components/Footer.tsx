@@ -1,4 +1,5 @@
-import { navItems, siteConfig } from "@/lib/site-data";
+import Link from "next/link";
+import { navItems, servicePageLinks, siteConfig } from "@/lib/site-data";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,7 +8,7 @@ export default function Footer() {
     <footer className="border-t border-border bg-background py-10 sm:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div>
             <p className="text-base font-bold text-foreground">{siteConfig.brandShort}</p>
             <p className="text-xs font-medium tracking-wide text-muted uppercase">
               {siteConfig.brandSub}
@@ -19,16 +20,31 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-foreground">Hızlı Bağlantılar</p>
+            <p className="text-sm font-semibold text-foreground">Hizmetler</p>
             <nav className="mt-3 flex flex-col gap-2">
-              {navItems.map((item) => (
-                <a
+              {servicePageLinks.map((item) => (
+                <Link
                   key={item.href}
                   href={item.href}
                   className="text-sm text-muted transition-colors hover:text-accent"
                 >
                   {item.label}
-                </a>
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold text-foreground">Hızlı Bağlantılar</p>
+            <nav className="mt-3 flex flex-col gap-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  {item.label}
+                </Link>
               ))}
             </nav>
           </div>
@@ -47,18 +63,16 @@ export default function Footer() {
               >
                 WhatsApp
               </a>
-              <a href={`mailto:${siteConfig.email}`} className="block transition-colors hover:text-accent">
-                {siteConfig.email}
-              </a>
               <p>{siteConfig.address}</p>
-            </div>
-          </div>
-
-          <div>
-            <p className="text-sm font-semibold text-foreground">Çalışma Saatleri</p>
-            <div className="mt-3 space-y-1 text-sm text-muted">
-              <p>{siteConfig.workingHours}</p>
-              <p>{siteConfig.workingHoursNote}</p>
+              <a
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block transition-colors hover:text-accent"
+              >
+                Yol Tarifi Al
+              </a>
+              <p className="pt-1">{siteConfig.workingHours}</p>
             </div>
           </div>
         </div>
