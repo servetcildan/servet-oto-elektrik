@@ -17,9 +17,9 @@ export const siteConfig = {
   postalCode: "19500",
   latitude: 40.969036,
   longitude: 34.876399,
-  workingHours: "Pazartesi – Cumartesi: 08:30 – 19:00",
-  workingHoursNote: "Pazar: Kapalı",
-  openingHoursSchema: "Mo-Sa 08:30-19:00",
+  workingHours: "7/24 Açık",
+  workingHoursNote: "Pazartesi – Pazar",
+  openingHoursSchema: "Mo-Su 00:00-23:59",
   mapsUrl: "https://maps.app.goo.gl/MF3aMMqmnMkeUGew9",
   mapEmbedUrl:
     "https://maps.google.com/maps?q=40.969036,34.876399&hl=tr&z=16&output=embed",
