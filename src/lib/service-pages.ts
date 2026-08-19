@@ -41,10 +41,10 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
   "osmancik-oto-elektrik": {
     slug: "osmancik-oto-elektrik",
     breadcrumbTitle: "Osmancık Oto Elektrik",
-    metaTitle: "Osmancık Oto Elektrikçi | Servet Oto Elektrik Elektronik Osmancık",
+    metaTitle: "Osmancık Oto Elektrik | Servet Oto Elektrik Elektronik",
     metaDescription:
       "Osmancık oto elektrikçi. Marş dinamosu, şarj dinamosu, akü ve elektrik tesisatı arızalarında teşhis ve onarım. Küçük Sanayi Sitesi, Osmancık.",
-    h1: "Osmancık Oto Elektrikçi ve Oto Elektrik Servisi",
+    h1: "Osmancık Oto Elektrik Servisi",
     intro:
       "Osmancık’ta oto elektrikçi olarak şarj dinamosu, marş dinamosu, akü ve tesisat kaynaklı arızalarda teşhis ve onarım yapıyoruz. Atölyemiz Küçük Sanayi Sitesi’ndedir; işlemler aracın elektrik sistemine göre planlanır.",
     sections: [
@@ -162,7 +162,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
       "Sensör ve devre kontrolü",
       "Teşhis raporu ve onarım yönlendirmesi",
     ],
-    relatedSlugs: ["ecu-motor-beyni", "abs-beyni", "dpf-egr"],
+    relatedSlugs: ["ecu-motor-beyni", "abs-beyni", "dpf-egr", "osmancik-oto-elektrik"],
   },
 
   "ecu-motor-beyni": {
@@ -218,7 +218,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
       "Yazılım yedekleme ve gerekli programlama",
       "Montaj ve fonksiyon doğrulama",
     ],
-    relatedSlugs: ["ariza-tespit", "immobilizer", "ecu-yazilim"],
+    relatedSlugs: ["ariza-tespit", "immobilizer", "ecu-yazilim", "osmancik-oto-elektrik"],
   },
 
   "abs-beyni": {

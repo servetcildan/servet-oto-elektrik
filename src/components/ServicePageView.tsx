@@ -13,6 +13,38 @@ import ServiceCta from "./ServiceCta";
 import { BreadcrumbJsonLd, ServiceFaqJsonLd, ServiceJsonLd } from "./JsonLd";
 import { IconChevronRight } from "./Icons";
 
+const inlineLinkClassName =
+  "font-medium text-foreground underline-offset-4 transition-colors hover:text-accent-text hover:underline";
+
+function paragraphWithServiceLinks(slug: string, text: string) {
+  if (slug !== "osmancik-oto-elektrik") {
+    return text;
+  }
+
+  const replacements = [
+    { phrase: "marş dinamosu sayfasındadır", href: "/mars-dinamosu", label: "marş dinamosu" },
+    { phrase: "şarj dinamosu sayfasındadır", href: "/sarj-dinamosu", label: "şarj dinamosu" },
+  ] as const;
+
+  const match = replacements.find((item) => text.includes(item.phrase));
+  if (!match) {
+    return text;
+  }
+
+  const [before, after] = text.split(match.phrase);
+
+  return (
+    <>
+      {before}
+      <Link href={match.href} className={inlineLinkClassName}>
+        {match.label}
+      </Link>
+      {" sayfasındadır"}
+      {after}
+    </>
+  );
+}
+
 export default function ServicePageView({ page }: { page: ServicePageData }) {
   const breadcrumbItems = [
     { label: "Ana Sayfa", href: "/" },
@@ -56,7 +88,7 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
             <h2 className="text-lg font-semibold text-foreground sm:text-xl">{section.heading}</h2>
             {section.paragraphs.map((p) => (
               <p key={p.slice(0, 40)} className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                {p}
+                {paragraphWithServiceLinks(page.slug, p)}
               </p>
             ))}
             {section.list && (

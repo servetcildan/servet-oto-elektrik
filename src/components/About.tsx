@@ -14,8 +14,15 @@ export default function About() {
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base">
               <strong className="font-semibold text-foreground">{siteConfig.businessName}</strong>,{" "}
-              {siteConfig.location} bölgesinde oto elektrik, oto elektronik, uygun oto
-              tamir, ECU ve araç beyin sistemlerinde hizmet veriyor.
+              {siteConfig.location} bölgesinde{" "}
+              <Link
+                href="/osmancik-oto-elektrik"
+                className="font-medium text-foreground underline-offset-4 transition-colors hover:text-accent-text hover:underline"
+              >
+                oto elektrik
+              </Link>
+              , oto elektronik, uygun oto tamir, ECU ve araç beyin sistemlerinde
+              hizmet veriyor.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
               Atölyemiz{" "}
