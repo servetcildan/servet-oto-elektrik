@@ -28,16 +28,17 @@ export default function Hero() {
             </p>
 
             <h1 className="mt-4 text-[2rem] font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem] xl:text-6xl">
-              <span className="text-metal block">Osmancık Oto Elektrik</span>
+              <span className="text-metal block">Servet Oto Elektrik</span>
               <span className="mt-1 block text-foreground">
-                &amp; <span className="text-accent-gradient">Elektronik</span> Servisi
+                <span className="text-accent-gradient">Elektronik</span> Osmancık
               </span>
             </h1>
 
             <div className="accent-rule mt-6 w-24" aria-hidden="true" />
 
             <p className="mt-6 max-w-lg text-[0.95rem] leading-relaxed text-muted sm:text-lg">
-              ECU, ABS ve araç elektroniğinde modern teşhis cihazlarıyla uzman onarım.
+              Osmancık Küçük Sanayi Sitesi’ndeki atölyemizde ECU, ABS ve araç
+              elektroniğinde modern teşhis cihazlarıyla uzman onarım.
               <span className="block text-foreground/80">
                 &ldquo;{siteConfig.slogan}&rdquo;
               </span>

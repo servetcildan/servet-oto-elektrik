@@ -12,8 +12,8 @@ export default function Services() {
             <span className="text-metal">Oto Elektrik ve Araç Elektroniği</span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
-            Osmancık ve Çorum çevresinde teşhisten onarıma kadar tüm süreci tek
-            atölyede yürütüyoruz.
+            Osmancık Küçük Sanayi Sitesi’ndeki atölyede oto elektrik, elektronik ve
+            uygun oto tamir işlerini aynı çatı altında yürütüyoruz.
           </p>
         </div>
 

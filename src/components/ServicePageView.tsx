@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { getServiceFaqs, servicePages, type ServicePageData } from "@/lib/service-pages";
+import {
+  adbluePageLink,
+  chargingPageLink,
+  repairPageLink,
+  roadsidePageLink,
+  starterPageLink,
+  workshopPageLink,
+} from "@/lib/site-data";
 import Breadcrumb from "./Breadcrumb";
 import ServiceCta from "./ServiceCta";
 import { BreadcrumbJsonLd, ServiceFaqJsonLd, ServiceJsonLd } from "./JsonLd";
@@ -14,6 +22,14 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
   const breadcrumbSchemaItems = [
     { label: "Ana Sayfa", href: "/" },
     { label: page.breadcrumbTitle, href: `/${page.slug}` },
+  ];
+  const extraRelatedLinks = [
+    ...(page.slug === "osmancik-oto-elektrik" ? [starterPageLink, chargingPageLink] : []),
+    ...(page.slug === "aku" ? [starterPageLink, chargingPageLink] : []),
+    ...(page.slug === "dpf-egr" ? [adbluePageLink] : []),
+    repairPageLink,
+    workshopPageLink,
+    roadsidePageLink,
   ];
   const faqs = getServiceFaqs(page);
 
@@ -112,6 +128,15 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
                   </Link>
                 );
               })}
+              {extraRelatedLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-lg border border-border bg-surface px-4 py-2 text-sm text-muted transition-colors hover:border-accent/30 hover:text-accent-text"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </section>
         )}

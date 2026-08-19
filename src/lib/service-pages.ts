@@ -41,34 +41,41 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
   "osmancik-oto-elektrik": {
     slug: "osmancik-oto-elektrik",
     breadcrumbTitle: "Osmancık Oto Elektrik",
-    metaTitle: "Osmancık Oto Elektrik Servisi | Servet Oto Elektrik-Elektronik",
+    metaTitle: "Osmancık Oto Elektrikçi | Servet Oto Elektrik Elektronik Osmancık",
     metaDescription:
-      "Osmancık oto elektrik ve oto elektronik servisi. Şarj dinamosu, marş dinamosu, akü, kablo tesisatı ve elektrik arızalarında profesyonel teşhis ve onarım.",
-    h1: "Osmancık Oto Elektrik & Elektronik Servisi",
+      "Osmancık oto elektrikçi. Marş dinamosu, şarj dinamosu, akü ve elektrik tesisatı arızalarında teşhis ve onarım. Küçük Sanayi Sitesi, Osmancık.",
+    h1: "Osmancık Oto Elektrikçi ve Oto Elektrik Servisi",
     intro:
-      "Osmancık ve çevresinde oto elektrik ile oto elektronik arızalarında aracınızın ihtiyacına göre teşhis ve onarım hizmeti sunuyoruz. Şarj dinamosu, marş dinamosu, akü ve tesisat kaynaklı sorunlarda sistemli bir yaklaşım benimsiyoruz.",
+      "Osmancık’ta oto elektrikçi olarak şarj dinamosu, marş dinamosu, akü ve tesisat kaynaklı arızalarda teşhis ve onarım yapıyoruz. Atölyemiz Küçük Sanayi Sitesi’ndedir; işlemler aracın elektrik sistemine göre planlanır.",
     sections: [
       {
-        heading: "Oto Elektrik Hizmetlerimiz",
+        heading: "Oto Elektrikçi Hizmeti",
         paragraphs: [
-          "Alternatör (şarj dinamosu), marş motoru, akü, sigorta, röle ve kablo tesisatı arızalarında aracınızın elektrik devresini adım adım kontrol ediyoruz. Gösterge panelindeki uyarı ışıkları, zayıf aydınlatma veya çalıştırma sorunları gibi belirtiler detaylı incelenir.",
+          "Osmancık oto elektrikçi ihtiyacında aracın elektrik devresini adım adım kontrol ediyoruz. Sigorta, röle, kablo tesisatı ve gösterge uyarıları birlikte değerlendirilir. Amaç, belirtinin kaynağını tahminle değil ölçümle netleştirmektir.",
         ],
       },
       {
-        heading: "Oto Elektronik Hizmetlerimiz",
+        heading: "Marş Dinamosu",
+        paragraphs: [
+          "Marş dinamosu arızasında araç zor çalışır, tık sesi gelir veya motor hiç dönmez. Akü sağlığı ile marş motoru birlikte bakılır; ayrıntılı belirtiler ve test ayrımı marş dinamosu sayfasındadır.",
+        ],
+      },
+      {
+        heading: "Şarj Dinamosu",
+        paragraphs: [
+          "Şarj dinamosu zayıf kaldığında akü sık boşalır veya şarj uyarı lambası yanabilir. Voltaj ve kayış kontrolünün ayrıntısı şarj dinamosu sayfasındadır; bu sayfa oto elektrik çatısını özetler.",
+        ],
+      },
+      {
+        heading: "Oto Elektronik Destek",
         paragraphs: [
           "Sensör, aktüatör ve kontrol modüllerinde elektronik arıza tespiti yapıyoruz. CAN-BUS iletişim hattı, bağlantı noktaları ve modül uyumluluğu değerlendirilerek sorunun kaynağı belirlenmeye çalışılır.",
         ],
       },
       {
-        heading: "Şarj ve Marş Sistemi",
+        heading: "Yolda kalan araçlar",
         paragraphs: [
-          "Şarj dinamosu arızasında akü sürekli boşalabilir; marş dinamosu sorunlarında ise araç zor çalışır veya hiç marş almaz. Her iki sistem de birbiriyle bağlantılı olduğu için birlikte test edilmesi önemlidir.",
-        ],
-        list: [
-          "Alternatör çıkış voltajı ve şarj devresi kontrolü",
-          "Marş motoru ve dişli mekanizma testi",
-          "Akü sağlığı ve deşarj nedenlerinin analizi",
+          "Araç çalışmıyor, marş almıyor veya elektrik arızası yüzünden yolda kaldıysa yerinde değerlendirme yapılabilir. Her arıza yol kenarında çözülmez; gerekirse atölyeye alınması gerekir.",
         ],
       },
     ],
@@ -123,6 +130,18 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Elektrik devresi ve sensör hatları",
         ],
       },
+      {
+        heading: "Teşhis sonrası onarım",
+        paragraphs: [
+          "Arıza tespiti, hangi sistemin bakılacağını gösterir; onarım ayrı bir adımdır. Elektrik-elektronik kaynaklı ve atölyenin gerçekten yaptığı işler, aynı adresteki oto tamir kapsamında planlanır. Teşhis raporu tek başına tamir vaadi değildir.",
+        ],
+      },
+      {
+        heading: "Yolda elektronik uyarı",
+        paragraphs: [
+          "Arıza lambası yanarak yolda kalan araçlarda, uygun koşullarda yerinde ön kontrol yapılabilir. Kesin teşhis ve onarım çoğu zaman atölye ekipmanı gerektirir.",
+        ],
+      },
     ],
     symptoms: [
       "Motor arıza lambasının (MIL) yanması",
@@ -149,17 +168,23 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
   "ecu-motor-beyni": {
     slug: "ecu-motor-beyni",
     breadcrumbTitle: "ECU / Motor Beyni",
-    metaTitle: "Osmancık ECU Motor Beyni Servisi | Servet Oto Elektrik",
+    metaTitle: "Osmancık ECU ve Motor Beyni Tamiri | Servet Oto Elektrik Elektronik",
     metaDescription:
-      "Osmancık ECU ve motor beyni arıza tespiti, onarım ve programlama. Motor kontrol ünitelerinde profesyonel elektronik servis.",
+      "Osmancık’ta ECU, motor beyni ve araç beyni tamiri. Motor kontrol ünitesinde arıza tespiti, onarım ve programlama.",
     h1: "Osmancık ECU / Motor Beyni Servisi",
     intro:
-      "Motor kontrol ünitesi (ECU), aracın yakıt, ateşleme ve emisyon sistemlerini yöneten ana elektronik beyindir. ECU arızalarında sistemli teşhis ve uygun onarım yöntemi belirlenir.",
+      "Motor beyni (ECU), yakıt, ateşleme ve emisyon sistemlerini yöneten ana elektronik kontroldür. Osmancık’ta araç beyni tamiri; teşhis, kart incelemesi ve uygun onarım yöntemiyle planlanır. Bu iş halk arasında “beyinci” olarak da anılır.",
     sections: [
+      {
+        heading: "Araç Beyni Tamiri",
+        paragraphs: [
+          "Araç beyni tamiri, motor beyni ve bağlı kontrol ünitelerinde iletişim, voltaj ve kart hasarının birlikte değerlendirilmesini kapsar. Su girişi, voltaj dalgalanması veya oksitlenme sık karşılaşılan nedenlerdendir. Belirtiler marka ve modele göre değişebilir.",
+        ],
+      },
       {
         heading: "ECU Arızalarında Sık Karşılaşılan Durumlar",
         paragraphs: [
-          "Su girişi, voltaj dalgalanması, bağlantı oksitlenmesi veya devre kartı hasarı ECU sorunlarına yol açabilir. Belirtiler marka ve modele göre değişiklik gösterebilir.",
+          "Motor beyni arızasında araç çalışmayabilir, stop edebilir veya birden fazla sensör hatası görülebilir. Kesin sonuç için teşhis cihazı ve fiziksel kontrol birlikte kullanılır.",
         ],
       },
       {
@@ -261,6 +286,12 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Gösterge panelindeki akü veya şarj uyarı ışığı genellikle şarj sistemindeki bir soruna işaret eder. Alternatör kayışı, regülatör veya akü bağlantıları kontrol edilmelidir.",
         ],
       },
+      {
+        heading: "Yolda akü bitmesi",
+        paragraphs: [
+          "Akü yolda biterse araç çalışmayabilir. Elektrik-elektronik kapsamında yerinde bakılabilir; her durumda yol kenarında tam çözüm mümkün olmayabilir.",
+        ],
+      },
     ],
     symptoms: [
       "Araç sabahları marş almıyor",
@@ -286,23 +317,35 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
   "dpf-egr": {
     slug: "dpf-egr",
     breadcrumbTitle: "DPF / EGR",
-    metaTitle: "Osmancık DPF ve EGR Arıza Servisi | Servet Oto Elektrik",
+    metaTitle: "Osmancık DPF ve EGR Arıza Tespiti | Servet Oto Elektrik Elektronik",
     metaDescription:
-      "Osmancık DPF partikül filtresi ve EGR arızalarında teşhis, onarım ve yazılım desteği. Emisyon sistemlerinde profesyonel servis.",
-    h1: "Osmancık DPF / EGR Arıza Servisi",
+      "Osmancık’ta DPF arıza tespiti, EGR arıza tespiti ve partikül temizleme değerlendirmesi. Emisyon sisteminde teşhis ve onarım; iptal veya silme vaadi yoktur.",
+    h1: "Osmancık DPF / EGR Arıza Tespiti",
     intro:
-      "Dizel araçlarda DPF (partikül filtresi) ve EGR (egzoz gazı devridaim) sistemleri emisyon kontrolünün parçasıdır. Bu sistemlerdeki arızalar performans düşüşü ve uyarı ışıklarıyla kendini gösterebilir.",
+      "Dizel araçlarda DPF (partikül filtresi) ve EGR (egzoz gazı devridaim) emisyon kontrolünün parçasıdır. Osmancık atölyemizde DPF arıza tespiti ve EGR arıza tespiti ile sorunun kaynağı okunur; partikül temizleme veya onarım, ölçüme göre değerlendirilir.",
     sections: [
       {
-        heading: "DPF Arızası Neden Oluşur?",
+        heading: "DPF Arıza Tespiti",
         paragraphs: [
-          "Kısa mesafe kullanım, düşük egzoz sıcaklığı veya filtre tıkanması rejenerasyon sürecini olumsuz etkileyebilir. DPF uyarı ışığı veya güç kaybı görülebilir.",
+          "DPF arıza tespiti, uyarı lambası, güç kaybı ve basınç farkı verilerinin birlikte okunmasını kapsar. Kısa mesafe kullanım veya düşük egzoz sıcaklığı rejenerasyonu zorlaştırabilir. Teşhis, filtreyi körlemesine sökmeden önce sistem durumunu anlamaya yöneliktir.",
         ],
       },
       {
-        heading: "EGR Arızası Nasıl Anlaşılır?",
+        heading: "Partikül Temizleme",
         paragraphs: [
-          "EGR valfi tıkanması veya arızası rölanti dalgalanması, duman artışı ve motor arıza lambası gibi belirtilerle ortaya çıkabilir. Teşhis cihazı ile EGR akış verileri incelenir.",
+          "Partikül temizleme, tıkanan veya rejenerasyonu tamamlanamayan DPF için değerlendirilen bir onarım yoludur. Uygunluk; arıza kodu, basınç verisi ve filtrenin fiziksel durumuna bağlıdır. Bu sayfa DPF veya EGR iptali, yazılımla sistem silme ya da emisyon cihazını etkisizleştirme vaadi içermez.",
+        ],
+      },
+      {
+        heading: "EGR Arıza Tespiti",
+        paragraphs: [
+          "EGR arıza tespiti, valf akışı, pozisyon verisi ve motor arıza kodlarının incelenmesiyle yapılır. Tıkanma veya valf arızası rölanti dalgalanması, duman artışı ve güç kaybı olarak görülebilir. Çözüm, ölçülen arızaya göre temizlik, onarım veya parça değişimi olabilir.",
+        ],
+      },
+      {
+        heading: "AdBlue / SCR kontrolü",
+        paragraphs: [
+          "AdBlue uyarıları, NOx sensörü ve SCR hattı DPF/EGR ile aynı emisyon zincirindedir. AdBlue arıza tespiti ayrı sayfada anlatılır. Bu sayfa AdBlue iptali veya emisyon sistemini devre dışı bırakma vaadi içermez.",
         ],
       },
     ],
@@ -321,7 +364,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
     procedures: [
       "Arıza kodu ve canlı veri analizi",
       "DPF basınç farkı ve EGR valf kontrolü",
-      "Temizlik, onarım veya yazılım değerlendirmesi",
+      "Uygun görülen durumlarda partikül temizleme veya onarım",
       "Sistem test sürüşü",
     ],
     relatedSlugs: ["ariza-tespit", "ecu-yazilim", "ecu-motor-beyni"],

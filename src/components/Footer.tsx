@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navItems, servicePageLinks, siteConfig } from "@/lib/site-data";
+import { navItems, servicePageLinks, siteConfig, adbluePageLink, chargingPageLink, repairPageLink, roadsidePageLink, starterPageLink, workshopPageLink } from "@/lib/site-data";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,8 +14,8 @@ export default function Footer() {
               {siteConfig.brandSub}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              {siteConfig.location} bölgesinde oto elektrik, elektronik ve ECU çözümlerinde
-              profesyonel servis hizmeti.
+              {siteConfig.businessName}, {siteConfig.location} bölgesinde oto elektrik,
+              elektronik, oto tamir ve ECU çözümlerinde profesyonel servis hizmeti.
             </p>
           </div>
 
@@ -31,6 +31,42 @@ export default function Footer() {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                href={repairPageLink.href}
+                className="text-sm text-muted transition-colors hover:text-accent-text"
+              >
+                {repairPageLink.label}
+              </Link>
+              <Link
+                href={adbluePageLink.href}
+                className="text-sm text-muted transition-colors hover:text-accent-text"
+              >
+                {adbluePageLink.label}
+              </Link>
+              <Link
+                href={starterPageLink.href}
+                className="text-sm text-muted transition-colors hover:text-accent-text"
+              >
+                {starterPageLink.label}
+              </Link>
+              <Link
+                href={chargingPageLink.href}
+                className="text-sm text-muted transition-colors hover:text-accent-text"
+              >
+                {chargingPageLink.label}
+              </Link>
+              <Link
+                href={roadsidePageLink.href}
+                className="text-sm text-muted transition-colors hover:text-accent-text"
+              >
+                {roadsidePageLink.label}
+              </Link>
+              <Link
+                href={workshopPageLink.href}
+                className="text-sm text-muted transition-colors hover:text-accent-text"
+              >
+                {workshopPageLink.label}
+              </Link>
             </nav>
           </div>
 
@@ -62,6 +98,14 @@ export default function Footer() {
                 className="block transition-colors hover:text-accent-text"
               >
                 WhatsApp
+              </a>
+              <a
+                href={siteConfig.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block transition-colors hover:text-accent-text"
+              >
+                Instagram
               </a>
               <p>{siteConfig.address}</p>
               <a

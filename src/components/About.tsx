@@ -1,4 +1,5 @@
-import { siteConfig, trustPoints } from "@/lib/site-data";
+import Link from "next/link";
+import { siteConfig, trustPoints, repairPageLink, workshopPageLink } from "@/lib/site-data";
 import { ServiceIcon, IconMapPin, IconPhone, IconWhatsApp } from "./Icons";
 
 export default function About() {
@@ -12,14 +13,27 @@ export default function About() {
               <span className="text-metal">Gerçek İşçilik, Ölçülebilir Sonuç</span>
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base">
-              <strong className="font-semibold text-foreground">{siteConfig.brand}</strong>,{" "}
-              {siteConfig.location} bölgesinde oto elektrik, oto elektronik, ECU ve araç
-              beyin sistemlerinde hizmet veriyor.
+              <strong className="font-semibold text-foreground">{siteConfig.businessName}</strong>,{" "}
+              {siteConfig.location} bölgesinde oto elektrik, oto elektronik, uygun oto
+              tamir, ECU ve araç beyin sistemlerinde hizmet veriyor.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
-              Atölyemiz {siteConfig.address} adresinde, {siteConfig.workingHours.toLowerCase()}{" "}
-              hizmet verir. Osmancık ve Çorum çevresinden gelen araçlarda teşhis ve onarım
-              aynı atölyede yürütülür.
+              Atölyemiz{" "}
+              <Link
+                href={workshopPageLink.href}
+                className="font-medium text-foreground underline-offset-4 transition-colors hover:text-accent-text hover:underline"
+              >
+                {siteConfig.address}
+              </Link>{" "}
+              adresinde, {siteConfig.workingHours.toLowerCase()} hizmet verir. Osmancık ve
+              Çorum çevresinden gelen araçlarda teşhis,{" "}
+              <Link
+                href={repairPageLink.href}
+                className="font-medium text-foreground underline-offset-4 transition-colors hover:text-accent-text hover:underline"
+              >
+                oto tamir
+              </Link>{" "}
+              ve onarım aynı atölyede yürütülür.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">

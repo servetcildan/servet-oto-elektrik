@@ -1,5 +1,5 @@
 export const siteConfig = {
-  businessName: "Servet Oto Elektrik Elektronik",
+  businessName: "Servet Oto Elektrik Elektronik Osmancık",
   brand: "SERVET OTO ELEKTRİK-ELEKTRONİK",
   brandShort: "SERVET",
   brandSub: "OTO ELEKTRİK-ELEKTRONİK",
@@ -23,6 +23,7 @@ export const siteConfig = {
   mapsUrl: "https://maps.app.goo.gl/MF3aMMqmnMkeUGew9",
   mapEmbedUrl:
     "https://maps.google.com/maps?q=40.969036,34.876399&hl=tr&z=16&output=embed",
+  instagramUrl: "https://www.instagram.com/servetotoelektrikelektronik/",
   ogImage: "/videos/isletme-tabela.jpg",
 } as const;
 
@@ -46,6 +47,43 @@ export const servicePageLinks = [
   { label: "DPF / EGR", href: "/dpf-egr" },
   { label: "Immobilizer", href: "/immobilizer" },
   { label: "ECU Yazılım", href: "/ecu-yazilim" },
+] as const;
+
+export const workshopPageLink = {
+  label: "Küçük Sanayi Sitesi",
+  href: "/osmancik-kucuk-sanayi-sitesi",
+} as const;
+
+export const roadsidePageLink = {
+  label: "Yol Yardım",
+  href: "/osmancik-yol-yardim",
+} as const;
+
+export const repairPageLink = {
+  label: "Oto Tamir",
+  href: "/osmancik-oto-tamir",
+} as const;
+
+export const adbluePageLink = {
+  label: "AdBlue",
+  href: "/adblue",
+} as const;
+
+export const starterPageLink = {
+  label: "Marş Dinamosu",
+  href: "/mars-dinamosu",
+} as const;
+
+export const chargingPageLink = {
+  label: "Şarj Dinamosu",
+  href: "/sarj-dinamosu",
+} as const;
+
+export const headerServiceLinks = [
+  repairPageLink,
+  ...servicePageLinks,
+  roadsidePageLink,
+  workshopPageLink,
 ] as const;
 
 export const heroTrustItems = [
@@ -79,6 +117,13 @@ export const trustPoints = [
 
 export const services = [
   {
+    title: "Oto Tamir",
+    description:
+      "Küçük Sanayi Sitesi’ndeki atölyede arıza tespiti sonrası elektrik-elektronik odaklı araç onarımı.",
+    icon: "gear",
+    href: "/osmancik-oto-tamir",
+  },
+  {
     title: "Bilgisayarlı Arıza Tespiti",
     description: "Profesyonel teşhis cihazlarıyla hızlı ve doğru sistem analizi.",
     icon: "scan",
@@ -106,7 +151,7 @@ export const services = [
     title: "AdBlue / NOx Sistem Çözümleri",
     description: "SCR, AdBlue ve NOx sensörü arızalarında profesyonel teşhis desteği.",
     icon: "droplet",
-    href: "/dpf-egr",
+    href: "/adblue",
   },
   {
     title: "İmmobilizer",
@@ -125,6 +170,13 @@ export const services = [
     description: "Marş motoru ve alternatör arızalarında test, onarım ve değişim.",
     icon: "zap",
     href: "/osmancik-oto-elektrik",
+  },
+  {
+    title: "Yol Yardım",
+    description:
+      "Yolda kalan araçlara elektrik-elektronik arızalar kapsamında yerinde değerlendirme ve destek.",
+    icon: "clock",
+    href: "/osmancik-yol-yardim",
   },
   {
     title: "Akü Kontrolü ve Değişimi",
@@ -288,7 +340,7 @@ export const ecuSoftwareServices = [
     title: "AdBlue Çözümleri",
     description: "SCR/AdBlue sistem arızalarında profesyonel yazılım ve teşhis desteği.",
     badge: "Emisyon",
-    href: "/dpf-egr",
+    href: "/adblue",
   },
   {
     title: "ECU Okuma / Yazma",

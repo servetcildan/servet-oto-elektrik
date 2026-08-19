@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { navItems, siteConfig } from "@/lib/site-data";
+import { headerServiceLinks, navItems, siteConfig } from "@/lib/site-data";
 import { IconMenu, IconClose, IconPhone, IconWhatsApp } from "./Icons";
 
 export default function Header() {
@@ -45,15 +45,40 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center justify-center gap-0.5 xl:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="nav-link rounded-lg px-2.5 py-2 text-[13px] font-medium text-muted lg:px-3"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.href === "/#hizmetler" ? (
+              <div key={item.href} className="group relative">
+                <a
+                  href={item.href}
+                  className="nav-link rounded-lg px-2.5 py-2 text-[13px] font-medium text-muted lg:px-3"
+                  aria-haspopup="true"
+                >
+                  {item.label}
+                </a>
+                <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="rounded-xl border border-border bg-background/98 p-2">
+                    {headerServiceLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-accent-text"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="nav-link rounded-lg px-2.5 py-2 text-[13px] font-medium text-muted lg:px-3"
+              >
+                {item.label}
+              </a>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center justify-end gap-2 sm:gap-3">
@@ -97,6 +122,21 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
+
+              <p className="mt-4 px-1 text-xs font-semibold uppercase tracking-wide text-muted">
+                Hizmet sayfaları
+              </p>
+              {headerServiceLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-surface-elevated"
+                >
+                  {link.label}
+                </Link>
+              ))}
+
               <a
                 href={`tel:${siteConfig.phone}`}
                 className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3.5 text-base font-semibold text-accent-on"

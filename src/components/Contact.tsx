@@ -1,4 +1,5 @@
-import { siteConfig } from "@/lib/site-data";
+import Link from "next/link";
+import { siteConfig, roadsidePageLink } from "@/lib/site-data";
 import { IconClock, IconMapPin, IconPhone, IconWhatsApp } from "./Icons";
 
 export default function Contact() {
@@ -75,6 +76,19 @@ export default function Contact() {
                 <p className="text-sm font-semibold text-foreground">Yol Tarifi Al</p>
               </div>
             </a>
+
+            <Link
+              href={roadsidePageLink.href}
+              className="card-premium flex items-center justify-center gap-3 rounded-2xl p-4"
+            >
+              <div className="rounded-xl border border-border bg-surface p-2.5 text-accent-text">
+                <IconClock className="h-5 w-5" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-muted">Yolda kalan araç</p>
+                <p className="text-sm font-semibold text-foreground">Yerinde destek isteyin</p>
+              </div>
+            </Link>
 
             <div className="rounded-2xl border border-border bg-surface-elevated p-5">
               <div className="flex gap-3">

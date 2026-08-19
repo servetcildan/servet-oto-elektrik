@@ -229,6 +229,7 @@ const iconMap = {
   scan: IconScan,
   battery: IconBattery,
   droplet: IconDroplet,
+  clock: IconClock,
 } as const;
 export function ServiceIcon({
   name,

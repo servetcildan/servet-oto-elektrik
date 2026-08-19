@@ -47,7 +47,7 @@ export function buildSocialMetadata(input: {
       title: input.title,
       description: input.description,
       url,
-      siteName: siteConfig.brand,
+      siteName: siteConfig.businessName,
       locale: "tr_TR",
       type: "website",
       images: socialImages(),
@@ -61,33 +61,90 @@ export function buildSocialMetadata(input: {
   };
 }
 
-export function buildServiceMetadata(page: ServicePageData): Metadata {
-  const canonical = absoluteUrl(`/${page.slug}`);
-  const social = buildSocialMetadata({
-    title: page.metaTitle,
-    description: page.metaDescription,
-    path: `/${page.slug}`,
-  });
+export function buildPageMetadata(input: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const canonical = absoluteUrl(input.path);
+  const social = buildSocialMetadata(input);
 
   return {
-    title: page.metaTitle,
-    description: page.metaDescription,
+    title: input.title,
+    description: input.description,
     alternates: { canonical },
     ...social,
     robots: { index: true, follow: true },
   };
 }
 
-export const homeMetadata: Metadata = {
-  title: "Servet Oto Elektrik Elektronik | Osmancık Oto Elektrik",
+export function buildServiceMetadata(page: ServicePageData): Metadata {
+  return buildPageMetadata({
+    title: page.metaTitle,
+    description: page.metaDescription,
+    path: `/${page.slug}`,
+  });
+}
+
+export const homeMetadata: Metadata = buildPageMetadata({
+  title: "Servet Oto Elektrik Elektronik Osmancık",
   description:
-    "Osmancık oto elektrik ve elektronik servisi. ECU, motor beyni, ABS, akü, DPF, EGR, immobilizer, arıza tespiti ve ECU yazılım hizmetleri.",
-  alternates: { canonical: absoluteUrl("/") },
+    "Servet Oto Elektrik Elektronik Osmancık, Küçük Sanayi Sitesi’ndeki atölyesinde oto tamir, ECU, motor beyni, ABS, akü, DPF, EGR ve arıza tespiti hizmeti verir.",
+  path: "/",
+});
+
+export const repairMetadata: Metadata = buildPageMetadata({
+  title: "Osmancık Oto Tamir | Servet Oto Elektrik Elektronik",
+  description:
+    "Osmancık Küçük Sanayi Sitesi’nde oto tamir, elektrik-elektronik arıza tespiti ve buna bağlı araç onarımı. Servet Oto Elektrik Elektronik Osmancık atölyesinde gerçek kapsam.",
+  path: "/osmancik-oto-tamir",
+});
+
+export const adblueMetadata: Metadata = buildPageMetadata({
+  title: "Osmancık AdBlue Arıza Tespiti | Servet Oto Elektrik Elektronik",
+  description:
+    "Osmancık’ta AdBlue uyarısı, SCR ve NOx sistem arıza tespiti. Sensör ve hat kontrolü; emisyon sistemini devre dışı bırakma vaadi yoktur.",
+  path: "/adblue",
+});
+
+export const starterMetadata: Metadata = buildPageMetadata({
+  title: "Osmancık Marş Dinamosu | Servet Oto Elektrik Elektronik",
+  description:
+    "Osmancık’ta marş basmama, tık sesi ve yavaş marş şikâyetlerinde marş dinamosu, akü ve elektrik bağlantısı birlikte test edilir.",
+  path: "/mars-dinamosu",
+});
+
+export const chargingMetadata: Metadata = buildPageMetadata({
+  title: "Osmancık Şarj Dinamosu | Servet Oto Elektrik Elektronik",
+  description:
+    "Osmancık’ta akü lambası, şarj olmama ve voltaj düşmesinde şarj dinamosu (alternatör) ile akü ilişkisi test edilir.",
+  path: "/sarj-dinamosu",
+});
+
+export const workshopMetadata: Metadata = {
+  title: "Osmancık Küçük Sanayi Sitesi | Servet Oto Elektrik Elektronik Osmancık",
+  description:
+    "Çiftlikler Mahallesi Küçük Sanayi Sitesi B Blok No:8, Osmancık/Çorum adresindeki oto elektrik atölyesi. Yol tarifi, telefon ve hizmetler.",
+  alternates: { canonical: absoluteUrl("/osmancik-kucuk-sanayi-sitesi") },
   ...buildSocialMetadata({
-    title: "Servet Oto Elektrik Elektronik | Osmancık Oto Elektrik",
+    title: "Osmancık Küçük Sanayi Sitesi | Servet Oto Elektrik Elektronik Osmancık",
     description:
-      "Osmancık oto elektrik ve elektronik servisi. ECU, motor beyni, ABS, akü, DPF, EGR, immobilizer, arıza tespiti ve ECU yazılım hizmetleri.",
-    path: "/",
+      "Çiftlikler Mahallesi Küçük Sanayi Sitesi B Blok No:8, Osmancık/Çorum adresindeki oto elektrik atölyesi. Yol tarifi, telefon ve hizmetler.",
+    path: "/osmancik-kucuk-sanayi-sitesi",
+  }),
+  robots: { index: true, follow: true },
+};
+
+export const roadsideMetadata: Metadata = {
+  title: "Osmancık Yol Yardım | Servet Oto Elektrik Elektronik",
+  description:
+    "Osmancık ve uygun yakın çevrede yolda kalan araçlara, elektrik-elektronik arızalar kapsamında yerinde yol yardım. Akü, marş ve elektronik arızalarda değerlendirme.",
+  alternates: { canonical: absoluteUrl("/osmancik-yol-yardim") },
+  ...buildSocialMetadata({
+    title: "Osmancık Yol Yardım | Servet Oto Elektrik Elektronik",
+    description:
+      "Osmancık ve uygun yakın çevrede yolda kalan araçlara, elektrik-elektronik arızalar kapsamında yerinde yol yardım. Akü, marş ve elektronik arızalarda değerlendirme.",
+    path: "/osmancik-yol-yardim",
   }),
   robots: { index: true, follow: true },
 };
