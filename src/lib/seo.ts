@@ -3,7 +3,7 @@ import { siteConfig } from "./site-data";
 import type { ServicePageData } from "./service-pages";
 
 /** Domain taşınınca yalnızca NEXT_PUBLIC_SITE_URL değiştirilir. */
-export const STABLE_PRODUCTION_URL = "https://servet-oto-elektrik.vercel.app";
+export const STABLE_PRODUCTION_URL = "https://www.servetotoelektrikosmancik.com";
 
 const OG_IMAGE_PATH = siteConfig.ogImage;
 const OG_IMAGE_ALT = "Servet Oto Elektrik-Elektronik, Osmancık Küçük Sanayi Sitesi";
