@@ -168,11 +168,12 @@ export default function WorkGallery({ items }: WorkGalleryProps) {
                   className="h-full w-full"
                   src={active.videoSrc}
                   poster={active.posterSrc ?? undefined}
+                  title={active.title}
                   controls
                   autoPlay
                   muted
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                 />
               ) : null}
             </div>

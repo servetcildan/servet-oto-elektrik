@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { navItems, siteConfig } from "@/lib/site-data";
-import { IconMenu, IconClose, IconPhone } from "./Icons";
+import { IconMenu, IconClose, IconPhone, IconWhatsApp } from "./Icons";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -103,6 +103,15 @@ export default function Header() {
               >
                 <IconPhone className="h-5 w-5" />
                 {siteConfig.phoneDisplay}
+              </a>
+              <a
+                href={`https://wa.me/${siteConfig.whatsapp}?text=Merhaba,%20bilgi%20almak%20istiyorum.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#128C4A] px-4 py-3.5 text-base font-semibold text-white"
+              >
+                <IconWhatsApp className="h-5 w-5" />
+                WhatsApp
               </a>
             </nav>
           </div>

@@ -5,19 +5,16 @@ import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
-const siteUrl = getSiteUrl();
-
 export const metadata: Metadata = {
-  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
-  robots: { index: true, follow: true },
+  metadataBase: new URL(getSiteUrl()),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

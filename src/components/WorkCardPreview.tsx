@@ -76,7 +76,7 @@ export default function WorkCardPreview({
           observer.disconnect();
         }
       },
-      { rootMargin: "220px 0px" },
+      { rootMargin: "80px 0px" },
     );
 
     observer.observe(frame);
@@ -146,11 +146,11 @@ export default function WorkCardPreview({
       {item.posterSrc ? (
         <Image
           src={item.posterSrc}
-          alt=""
+          alt={item.title}
           fill
           sizes={featured ? "(max-width: 640px) 92vw, 62vw" : "(max-width: 640px) 92vw, 31vw"}
           className={`z-0 object-cover transition-opacity duration-200 ${hovering ? "opacity-0" : "opacity-100"}`}
-          aria-hidden="true"
+          fetchPriority={featured ? "high" : "low"}
         />
       ) : null}
 

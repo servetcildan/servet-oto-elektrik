@@ -1,9 +1,8 @@
 import Link from "next/link";
-import type { ServicePageData } from "@/lib/service-pages";
-import { servicePages } from "@/lib/service-pages";
+import { getServiceFaqs, servicePages, type ServicePageData } from "@/lib/service-pages";
 import Breadcrumb from "./Breadcrumb";
 import ServiceCta from "./ServiceCta";
-import { BreadcrumbJsonLd } from "./JsonLd";
+import { BreadcrumbJsonLd, ServiceFaqJsonLd, ServiceJsonLd } from "./JsonLd";
 import { IconChevronRight } from "./Icons";
 
 export default function ServicePageView({ page }: { page: ServicePageData }) {
@@ -12,10 +11,17 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
     { label: "Hizmetler", href: "/#hizmetler" },
     { label: page.breadcrumbTitle, href: `/${page.slug}` },
   ];
+  const breadcrumbSchemaItems = [
+    { label: "Ana Sayfa", href: "/" },
+    { label: page.breadcrumbTitle, href: `/${page.slug}` },
+  ];
+  const faqs = getServiceFaqs(page);
 
   return (
     <>
-      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <BreadcrumbJsonLd items={breadcrumbSchemaItems} />
+      <ServiceJsonLd page={page} />
+      <ServiceFaqJsonLd page={page} />
       <article className="mx-auto max-w-4xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
         <Breadcrumb items={breadcrumbItems} />
 
@@ -109,6 +115,18 @@ export default function ServicePageView({ page }: { page: ServicePageData }) {
             </div>
           </section>
         )}
+
+        <section className="mt-10">
+          <h2 className="text-lg font-semibold text-foreground sm:text-xl">Sık Sorulan Sorular</h2>
+          <div className="mt-4 space-y-4">
+            {faqs.map((item) => (
+              <div key={item.question} className="rounded-xl border border-border bg-surface/60 px-4 py-4 sm:px-5">
+                <h3 className="text-sm font-semibold text-foreground sm:text-base">{item.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <ServiceCta />
 

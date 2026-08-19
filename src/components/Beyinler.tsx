@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { brainUnits } from "@/lib/site-data";
 import { IconCpu } from "./Icons";
 
@@ -19,8 +20,9 @@ export default function Beyinler() {
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {brainUnits.map((unit) => (
-            <article
+            <Link
               key={unit.name}
+              href={unit.href}
               className="card-premium group relative overflow-hidden rounded-2xl p-5 sm:p-6"
             >
               <div className="relative">
@@ -35,7 +37,7 @@ export default function Beyinler() {
                 <h3 className="text-base font-semibold text-foreground sm:text-lg">{unit.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{unit.description}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

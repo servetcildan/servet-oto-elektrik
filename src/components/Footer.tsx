@@ -77,10 +77,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted sm:text-sm">
+        <div className="mt-10 flex flex-col items-center gap-2 border-t border-border pt-6 text-center text-xs text-muted sm:text-sm">
           <p>
             &copy; {currentYear} {siteConfig.brand}. Tüm hakları saklıdır.
           </p>
+          <Link
+            href="/gizlilik-politikasi"
+            className="transition-colors hover:text-accent-text"
+          >
+            Gizlilik Politikası / KVKK
+          </Link>
         </div>
       </div>
     </footer>

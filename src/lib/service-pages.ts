@@ -429,3 +429,22 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
 export function getServicePage(slug: string): ServicePageData | undefined {
   return servicePages[slug as ServiceSlug];
 }
+
+export function getServiceFaqs(page: ServicePageData) {
+  const symptoms = page.symptoms.slice(0, 4).join("; ");
+
+  return [
+    {
+      question: `${page.breadcrumbTitle} kapsamında neler yapılır?`,
+      answer: page.intro,
+    },
+    {
+      question: "Hangi belirtilerde bu servise başvurulur?",
+      answer: `${symptoms}.`,
+    },
+    {
+      question: "Serviste hangi işlemler uygulanır?",
+      answer: page.procedures.join(" "),
+    },
+  ];
+}

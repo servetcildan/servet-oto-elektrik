@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ecuSoftwareServices } from "@/lib/site-data";
 import { IconChevronRight } from "./Icons";
 
@@ -18,8 +19,9 @@ export default function EcuYazilim() {
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {ecuSoftwareServices.map((service) => (
-            <article
+            <Link
               key={service.title}
+              href={service.href}
               className="card-premium group relative flex flex-col rounded-2xl p-5 sm:p-6"
             >
               <span className="mb-3 inline-flex w-fit rounded-full border border-border bg-surface px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent-text sm:text-[11px]">
@@ -27,7 +29,7 @@ export default function EcuYazilim() {
               </span>
               <h3 className="text-base font-semibold text-foreground sm:text-lg">{service.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{service.description}</p>
-            </article>
+            </Link>
           ))}
         </div>
 
@@ -42,13 +44,13 @@ export default function EcuYazilim() {
               mevcut yazılım durumuna göre en uygun çözüm önerilir; emisyon ve güvenlik
               sistemlerinde sorumlu bir yaklaşım benimsenir.
             </p>
-            <a
-              href="#iletisim"
+            <Link
+              href="/ecu-yazilim"
               className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-accent-on transition-colors hover:bg-accent-hover"
             >
               Yazılım Danışmanlığı
               <IconChevronRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

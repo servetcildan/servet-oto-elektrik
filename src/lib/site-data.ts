@@ -23,6 +23,7 @@ export const siteConfig = {
   mapsUrl: "https://maps.app.goo.gl/MF3aMMqmnMkeUGew9",
   mapEmbedUrl:
     "https://maps.google.com/maps?q=40.969036,34.876399&hl=tr&z=16&output=embed",
+  ogImage: "/videos/isletme-tabela.jpg",
 } as const;
 
 export const navItems = [
@@ -224,31 +225,37 @@ export const brainUnits = [
     name: "Motor ECU",
     description: "Benzin ve dizel motor kontrol üniteleri — arıza tespiti ve onarım.",
     code: "ECU-001",
+    href: "/ecu-motor-beyni",
   },
   {
     name: "ABS Beyni",
     description: "Fren ve stabilite kontrol modülleri — güvenlik odaklı teşhis ve onarım.",
     code: "ABS-002",
+    href: "/abs-beyni",
   },
   {
     name: "Airbag Beyni",
     description: "SRS güvenlik sistemi kontrol üniteleri — modül analizi ve onarım.",
     code: "SRS-003",
+    href: "/ariza-tespit",
   },
   {
     name: "Şanzıman Beyni",
     description: "Otomatik şanzıman kontrol modülleri — adaptasyon ve yazılım desteği.",
     code: "TCU-004",
+    href: "/ecu-yazilim",
   },
   {
     name: "BCM / BSI",
     description: "Gövde kontrol, kapı, aydınlatma ve erişim güvenlik modülleri.",
     code: "BCM-005",
+    href: "/immobilizer",
   },
   {
     name: "Elektronik Kontrol Modülleri",
     description: "Klima, park sensörü, direksiyon ve diğer yardımcı kontrol üniteleri.",
     code: "ECM-006",
+    href: "/osmancik-oto-elektrik",
   },
 ] as const;
 
@@ -257,40 +264,48 @@ export const ecuSoftwareServices = [
     title: "Stage 1",
     description: "Fabrika güvenlik sınırları gözetilerek yapılan temel performans kalibrasyonu.",
     badge: "Kalibrasyon",
+    href: "/ecu-yazilim",
   },
   {
     title: "Stage 2",
     description: "Donanım uyumluluğu kontrol edilerek uygulanan ileri seviye kalibrasyon.",
     badge: "İleri Seviye",
+    href: "/ecu-yazilim",
   },
   {
     title: "DPF Çözümleri",
     description: "Partikül filtresi kaynaklı arıza ve performans sorunlarına yazılım desteği.",
     badge: "Emisyon",
+    href: "/dpf-egr",
   },
   {
     title: "EGR Çözümleri",
     description: "EGR sisteminden kaynaklanan arıza ve verim kayıplarına yönelik çözümler.",
     badge: "Emisyon",
+    href: "/dpf-egr",
   },
   {
     title: "AdBlue Çözümleri",
     description: "SCR/AdBlue sistem arızalarında profesyonel yazılım ve teşhis desteği.",
     badge: "Emisyon",
+    href: "/dpf-egr",
   },
   {
     title: "ECU Okuma / Yazma",
     description: "Orijinal yazılım yedekleme, okuma ve güvenli yazılım uygulama hizmetleri.",
     badge: "Temel",
+    href: "/ecu-yazilim",
   },
   {
     title: "İmmobilizer Çözümleri",
     description: "Anahtar eşleştirme ve güvenlik sistemi yazılım işlemleri.",
     badge: "Güvenlik",
+    href: "/immobilizer",
   },
   {
     title: "Şanzıman Adaptasyonları",
     description: "TCU öğrenme, adaptasyon ve şanzıman kontrol yazılım işlemleri.",
     badge: "Şanzıman",
+    href: "/ecu-yazilim",
   },
 ] as const;

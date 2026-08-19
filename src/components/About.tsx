@@ -16,6 +16,11 @@ export default function About() {
               {siteConfig.location} bölgesinde oto elektrik, oto elektronik, ECU ve araç
               beyin sistemlerinde hizmet veriyor.
             </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+              Atölyemiz {siteConfig.address} adresinde, {siteConfig.workingHours.toLowerCase()}{" "}
+              hizmet verir. Osmancık ve Çorum çevresinden gelen araçlarda teşhis ve onarım
+              aynı atölyede yürütülür.
+            </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
